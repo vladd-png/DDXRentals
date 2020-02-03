@@ -6,7 +6,9 @@
 
 .app {
   display: flex;
-  background: #141527;
+  background-image: url('../../images/SSW-Wallpapaer.jpg');
+  background-size: cover;
+  background-position: bottom;
   height: 100vh;
   text-align: center;
   width: 100%;

@@ -1,19 +1,18 @@
 import React, { Component } from 'react';
-import local from '../../data/local';
+import Form from '../Form/Form.js'
 import './App.css';
 
 class App extends Component {
   constructor() {
     super();
     this.state = {
-      local
     }
   }
 
   render () {
     return (
       <div className="app">
-        YOUR CODE GOES HERE!
+        <Form />
       </div>
     );
   }
