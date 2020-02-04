@@ -9,7 +9,8 @@ class Form extends Component {
     this.state = {
       name: '',
       email: '',
-      goal: ''
+      value: '',
+      check: false
     }
   }
   handleChange = event => {
@@ -18,7 +19,9 @@ class Form extends Component {
   handleChoice = event => {
     // value here is 'on' when clicked
     // need to figure out how to turn all to off and then setState so user can only choose one
-    this.setState({ goal: event.target.name })
+    // console.log(prevState);
+    console.log(event);
+    this.setState({ value: event.target.value });
   }
   render() {
     return (
@@ -26,13 +29,16 @@ class Form extends Component {
         <img src={logo} alt='DDR Xtreme logo' id='logo-img'/>
         <img src={title} alt='DDR Xtreme title' id='title-img'/>
         <div className='user-inputs'>
-          <input placeholder='login name' name='name' className='form-input' value={this.state.name} onChange={this.handleChange} autocomplete='off'/>
-          <input placeholder='login email' name='email' className='form-input' value={this.state.email} onChange={this.handleChange} autocomplete='off'/>
+          <input placeholder='Name' name='name' className='form-input' value={this.state.name} onChange={this.handleChange} autoComplete='off'/>
+          <input placeholder='Email' name='email' className='form-input' value={this.state.email} onChange={this.handleChange} autoComplete='off'/>
         </div>
-        <div className='user-inputs'>
-        <input type='radio' name='business' className='radio-btn' onClick={this.handleChoice} /><span className='btn-label'>Business</span>
-          <input type='radio' name='recreational' className='radio-btn' onClick={this.handleChoice} /><span className='btn-label'>Recreational</span>
-          <input type='radio' name='extreme' className='radio-btn' onClick={this.handleChoice} /><span className='btn-label'>Extreme</span>
+        <div className='user-inputs dropdown'>
+          <h2 className=''>Choose Your Adventure Type</h2>
+          <select onChange={this.handleChoice} className='btn-label' value={this.state.value}>
+            <option value='business'>Business</option>
+            <option value='recreational'>Recreational</option>
+            <option value='extreme'>Xtreme</option>
+          </select>
         </div>
         <div className='user-inputs'>
           <button type='button' id='form-btn'>Send It</button>

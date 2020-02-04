@@ -39,17 +39,12 @@
   width: 90%;
   margin-left: 5%;
   margin-top: 150px;
-
-}
-
-.radio-btn {
-  margin-right: -30px;
-  margin-top: 10px;
 }
 
 .btn-label {
   color: #DB49CB;
-  font-size: 1.5em;
+  font-size: 1.2em;
+  margin-top: 10px;
 }
 
 #form-btn {
@@ -59,4 +54,9 @@
   font-size: 1.5em;
   color: #fff;
   border-radius: 15px;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
 }
