@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
-import Form from '../Form/Form.js';
-import Animation from '../Animation/Animation.js';
+// import Form from '../Form/Form.js';
+// import Animation from '../Animation/Animation.js';
 import { fetchRentalAreaData } from '../../helpers.js';
 import './App.css';
+import Map from '../Map/Map.js';
 
 class App extends Component {
   constructor() {
@@ -35,8 +36,7 @@ class App extends Component {
   render () {
     return (
       <div className="app">
-        <Animation />
-        <Form />
+        <Map />
       </div>
     );
   }

@@ -4,6 +4,8 @@
   padding: 0;
 }
 
+/* login page */
+/*
 .app {
   display: flex;
   background-image: url('../../data/DDR-Wallpaper.jpg');
@@ -12,4 +14,10 @@
   height: 100vh;
   text-align: center;
   width: 100%;
+} */
+
+/* map page */
+.app {
+  background-color: #202020;
+  overflow: hidden;
 }
