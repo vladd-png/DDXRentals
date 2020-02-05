@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Form from '../Form/Form.js';
+import SmallListingCard from '../SmallListingCard/SmallListingCard.js';
 import Animation from '../Animation/Animation.js';
 import { fetchRentalAreaData } from '../../helpers.js';
 import './App.css';
@@ -35,8 +36,7 @@ class App extends Component {
   render () {
     return (
       <div className="app">
-        <Animation />
-        <Form />
+      <SmallListingCard />
       </div>
     );
   }
