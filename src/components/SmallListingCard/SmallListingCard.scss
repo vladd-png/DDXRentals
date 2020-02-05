@@ -1,0 +1,63 @@
+
+.card-container {
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.8);
+  border-radius: 35px;
+  display: flex;
+  flex-direction: row;
+  height: 200px;
+  justify-content: space-around;
+  margin: 10%;
+  width: 700px;
+  z-index: 100;
+}
+
+h3 {
+  font-size: 1.3em;
+  margin: 3% 0% 3% 0%;
+}
+
+.image-container {
+  background-color: #FFBF03;
+  border-radius: 20px;
+  height: 150px;
+  margin-left: 2%;
+  width: 150px;
+}
+
+.icon {
+  height: 30px;
+  margin-right: 10px;
+  width: auto;
+}
+
+.small-card-details {
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+}
+
+.fav-icon {
+  height: 70px;
+  margin-bottom: 30%;
+  width: 70px;
+}
+
+.card-buttons {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.view-listing-button {
+  background-color: #FFBF03;
+  border-radius: 15px;
+  color: #fff;
+  font-size: 1em;
+  height: 50px;
+  width: 120px;
+}
+
+.view-listing-button:hover {
+  cursor: pointer;
+}
