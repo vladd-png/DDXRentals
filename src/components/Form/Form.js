@@ -9,7 +9,7 @@ class Form extends Component {
     this.state = {
       name: '',
       email: '',
-      value: '',
+      value: 'business',
       check: false
     }
   }
@@ -17,10 +17,6 @@ class Form extends Component {
     this.setState({ [event.target.name]: event.target.value })
   }
   handleChoice = event => {
-    // value here is 'on' when clicked
-    // need to figure out how to turn all to off and then setState so user can only choose one
-    // console.log(prevState);
-    console.log(event);
     this.setState({ value: event.target.value });
   }
   render() {
