@@ -4,6 +4,9 @@ $randomNumber2: random(500);
 
 .fade-in {
 	 animation: fade-in 1.2s linear infinite alternate both;
+	 height: 20px;
+	 width: auto;
+	 z-index: 0;
 }
 
 #snowflake {

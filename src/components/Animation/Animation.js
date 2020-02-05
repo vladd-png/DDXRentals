@@ -1,18 +1,16 @@
 import React from 'react';
 import './Animation.scss';
-import { snowflake } from '../../data/snowflake.png';
+import Snowflake from './Snowflake.js';
 
 const Animation = () => {
-  // let random;
-  // let random2;
-  // for (var i = 0; i < 30; i++) {
-  //   random = (Math.random() * 100);
-  //   random2 = (Math.random() * 100);
-    // var animate = `<img className='fade-in' src='${snowflake}' alt='snowflake animation' position: absolute top:${random}px left:${random2}px`
-  // }
+  let snowflake = [];
+  for (var i = 0; i < 50; i ++) {
+    snowflake.push(Math.floor(Math.random() * 1000))
+  }
+  const flakes = snowflake.map(flake => <Snowflake locationX={flake - 50} locationY={Math.floor(Math.random() * 1500)} key={Math.random()}/>);
   return (
     <div>
-      <img className='fade-in' id='snowflake' src={snowflake} alt='snowflake animation' />
+      {flakes}
     </div>
   )
 }
