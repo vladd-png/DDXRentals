@@ -1,0 +1,22 @@
+$randomNumber1: random(500);
+$randomNumber2: random(500);
+// $randomNumber3: random(500);
+
+.fade-in {
+	 animation: fade-in 1.2s linear infinite alternate both;
+}
+
+#snowflake {
+	position: absolute;
+	top: $randomNumber2 + px;
+	left: $randomNumber2 + px;
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}

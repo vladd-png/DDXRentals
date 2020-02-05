@@ -6,7 +6,7 @@
 
 .app {
   display: flex;
-  background-image: url('../../images/SSW-Wallpapaer.jpg');
+  background-image: url('../../data/DDR-Wallpaper.jpg');
   background-size: cover;
   background-position: bottom;
   height: 100vh;
