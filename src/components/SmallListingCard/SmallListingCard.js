@@ -4,6 +4,9 @@ import snowflake from '../../data/snowflake.png';
 import compassIcon from '../../data/compass_icon.png';
 import gondolaIcon from '../../data/gondola_icon.png';
 import priceIcon from '../../data/price_icon.png';
+import bedIcon from '../../data/bed_icon.png';
+import toiletIcon from '../../data/toilet_icon.png';
+import featuresIcon from '../../data/features_icon.png';
 
 const SmallListingCard = () => {
 
@@ -23,20 +26,24 @@ const SmallListingCard = () => {
         </div>
       </article>
 
-      <article className='full-card-container'>
-        <div className='image-container'>image</div>
-        <div className='image-container'>image</div>
-        <h3><img className='icon' src={gondolaIcon} alt='location icon'/>Beds: 2</h3>
-        <h3><img className='icon' src={compassIcon} alt='location icon'/>Baths: 1.5</h3>
-        <h3><img className='icon' src={priceIcon} alt='location icon'/>Features:</h3>
-        <ul>
-          <li>updated kitchen</li>
-          <li>rooftop</li>
-          <li>wetbar</li>
-          <li>backyard area</li>
-          <li>fireplace</li>
-        </ul>
-        <button className='view-listing-button'>make reservation</button>
+      <article className='full-card-container expand'>
+        <div>
+          <div className='additional-images'>image</div>
+          <div className='additional-images'>image</div>
+        </div>
+        <div className='additional-info'>
+          <h3><img className='icon' src={bedIcon} alt='location icon'/>Beds: 2</h3>
+          <h3><img className='icon' src={toiletIcon} alt='location icon'/>Baths: 1.5</h3>
+          <h3><img className='icon' src={featuresIcon} alt='location icon'/>Features:</h3>
+          <ul>
+            <li>updated kitchen</li>
+            <li>rooftop</li>
+            <li>wetbar</li>
+            <li>backyard area</li>
+            <li>fireplace</li>
+          </ul>
+        </div>
+        <button className='make-reservation-button'>make reservation</button>
       </article>
 
     </div>
