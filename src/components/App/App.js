@@ -26,6 +26,13 @@ class App extends Component {
       this.updateAreaDetails(areaNamesData.areas)
     })
     .catch(error => window.alert(`There was an error: ${error}`))
+
+  fetch('http://localhost:3001/api/v1/listings')
+    .then(response => response.json())
+    .then(listingInfo => {
+       this.setState( {listings: {listingInfo}} )
+     })
+    .catch(error => window.alert(`There was an error: ${error}`))
   }
 
   updateAreaDetails(areaDetails) {
