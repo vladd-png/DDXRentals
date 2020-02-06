@@ -2,11 +2,11 @@ import React, { Component } from 'react';
 import Form from '../Form/Form.js';
 import SmallListingCard from '../SmallListingCard/SmallListingCard.js';
 import Animation from '../Animation/Animation.js';
-import { fetchRentalAreaData } from '../../helpers.js';
-import './App.css';
 import Map from '../Map/Map.js';
 import Nav from '../Nav/Nav.js';
 import Neighborhood from '../Neighborhood/Neighborhood.js';
+import { fetchRentalAreaData } from '../../helpers.js';
+import './App.css';
 
 class App extends Component {
   constructor() {
@@ -14,10 +14,11 @@ class App extends Component {
     this.state = {
       areaNames: {},
       areaDetails: {},
-      listings: {}
+      listings: {},
+      chosenHood: '',
+      hoods: {}
     }
   }
-
   componentDidMount() {
   fetch('http://localhost:3001/api/v1/areas')
     .then(response => response.json())
@@ -40,13 +41,24 @@ class App extends Component {
     const selectedArea = fetchRentalAreaData(areaDetails)
     Promise.all(selectedArea)
       .then(data => {
-        this.setState({areaDetails: data})
+        data.forEach(area => {
+          // let id = area.id
+          // console.log(cityObj);
+          this.setState({ hoods: { ...this.state.hoods, [area.id]: area } })
+        })
+        this.setState({ areaDetails: data })
       })
   }
+  updateNeighborhoodInfo = (zoneString) => {
+    this.setState({ chosenHood: this.state.chosenHood[zoneString] })
 
+  }
   render () {
     return (
       <div className="app">
+        <Nav />
+        <Map updateNeighborhoodInfo={this.updateNeighborhoodInfo}/>
+        <Neighborhood areas={this.state.areaDetails}/>
         <SmallListingCard />
       </div>
     );
