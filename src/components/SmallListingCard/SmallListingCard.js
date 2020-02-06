@@ -32,9 +32,9 @@ const SmallListingCard = () => {
           <div className='additional-images'>image</div>
         </div>
         <div className='additional-info'>
-          <h3><img className='icon' src={bedIcon} alt='location icon'/>Beds: 2</h3>
-          <h3><img className='icon' src={toiletIcon} alt='location icon'/>Baths: 1.5</h3>
-          <h3><img className='icon' src={featuresIcon} alt='location icon'/>Features:</h3>
+          <h3>Beds: 2</h3>
+          <h3>Baths: 1.5</h3>
+          <h3><img className='icon' src={featuresIcon} alt='location icon'/>features:</h3>
           <ul>
             <li>updated kitchen</li>
             <li>rooftop</li>
