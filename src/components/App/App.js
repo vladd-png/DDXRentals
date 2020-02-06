@@ -3,6 +3,8 @@ import React, { Component } from 'react';
 // import Animation from '../Animation/Animation.js';
 import './App.css';
 import Map from '../Map/Map.js';
+import Nav from '../Nav/Nav.js';
+import Neighborhood from '../Neighborhood/Neighborhood.js';
 
 class App extends Component {
   constructor() {
@@ -13,7 +15,9 @@ class App extends Component {
   render () {
     return (
       <div className="app">
+        <Nav />
         <Map />
+        <Neighborhood />
       </div>
     );
   }
