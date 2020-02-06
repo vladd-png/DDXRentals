@@ -2,18 +2,19 @@ import React, { Component } from 'react';
 import './Neighborhood.scss';
 
 class Neighborhood extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
-
+      areaId: ''
     }
   }
   render() {
     return (
       <aside className='sidebar-zone'>
         <h1>RiNo</h1>
-        <h2>River North Art District</h2>
-        <p>RiNo is a burgeoning area with new bars, restaurants and event spaces popping up all the time. Explore this thriving area of Denver today!</p>
+        <h2>{this.props.name}</h2>
+        <h3>{this.props.location}</h3>
+        <p>{this.props.about}</p>
         <ul>
           <li>Listing 1</li>
           <li>Listing 2</li>
