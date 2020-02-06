@@ -39,9 +39,7 @@ class App extends Component {
   render () {
     return (
       <div className="app">
-        <Nav />
-        <Map />
-        <Neighborhood />
+        <SmallListingCard />
       </div>
     );
   }
