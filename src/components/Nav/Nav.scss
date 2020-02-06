@@ -1,0 +1,41 @@
+.avatar-img {
+  height: 70px;
+  width: auto;
+}
+
+.nav-bar {
+  height: 80px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  background-color: #DB49CB;
+  position: relative;
+  align-items: center;
+  color: black;
+  font-size: 1.2em;
+  padding-right: 15px;
+}
+
+.logo-img {
+  height: 150px;
+  z-index: 15;
+}
+
+.snowflake {
+  height: 60px;
+}
+
+.user-info {
+  color: #fff;
+  text-align: center;
+}
+
+.welcome-msg {
+  width: 40%;
+  text-align: center;
+}
+
+.user-display {
+  display: flex;
+  flex-direction: column;
+}
