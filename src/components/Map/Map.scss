@@ -1,7 +1,8 @@
 #map-image {
-  height: 110vh;
+  height: 100vh;
   width: auto;
   margin-top: -5vh;
+
 }
 
 .map {
@@ -9,15 +10,19 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  overflow: hidden;
+  position: relative;
+  left: -30vh;
 }
 
 #cap-hill {
   border: 2px pink solid;
-  height: 21vh;
-  width: 14.5vh;
+  height: 19vh;
+  width: 13vh;
   position: relative;
   z-index: 10;
-  top: -36vh;
+  top: -33vh;
+  left: 1vh;
   margin-right: 33vh;
 }
 
@@ -28,23 +33,23 @@
 #lohi-1 {
   border: 2px pink;
   width: 15.5vh;
-  height: 16vh;
+  height: 15vh;
   position: relative;
   z-index: 10;
-  top: -87.5vh;
-  left: -36vh;
+  top: -80.5vh;
+  left: -32vh;
   border-left: 100px solid transparent;
 }
 
 #lohi-2 {
     width: 0;
     height: 0;
-    border-bottom: 100px solid #202020;
-    border-left: 100px solid transparent;
+    border-bottom: 90px solid #202020;
+    border-left: 90px solid transparent;
     position: relative;
     z-index: 10;
-    top: -99.5vh;
-    left: -31.5vh;
+    top: -92.5vh;
+    left: -27.5vh;
   }
 
   #park-hill-1 {
@@ -54,27 +59,27 @@
     height: 7vh;
     position: relative;
     z-index: 11;
-    top: -141vh;
-    left: 37.5vh;
+    top: -129vh;
+    left: 34.5vh;
   }
 
   #park-hill-2 {
     border: 2px pink;
-    width: 24.5vh;
-    height: 51vh;
+    width: 22.5vh;
+    height: 46vh;
     position: relative;
     z-index: 10;
-    top: -147vh;
-    left: 26.5vh;
+    top: -135vh;
+    left: 24.5vh;
   }
 
   #rino-1 {
     border: 2px pink;
-    width: 37.5vh;
-    height: 23vh;
+    width: 34.5vh;
+    height: 20vh;
     position: relative;
     z-index: 10;
-    top: -187vh;
+    top: -170vh;
     left: -5.5vh;
   }
 
@@ -85,18 +90,18 @@
     border-left: 120px solid transparent;
     position: relative;
     z-index: 10;
-    top: -203vh;
-    left: 3.5vh;
+    top: -184vh;
+    left: 1.5vh;
   }
 
   #rino-3 {
-    width: 12vh;
+    width: 11vh;
     height: 25vh;
     background-color: #202020;
     position: relative;
     z-index: 10;
-    top: -218vh;
-    left: 19.5vh;
+    top: -199vh;
+    left: 17.5vh;
   }
 
   #rino-4 {
@@ -107,8 +112,8 @@
     // background-color: #202020;
     position: relative;
     z-index: 10;
-    top: -237vh;
-    left: -7.5vh;
+    top: -218vh;
+    left: -5.5vh;
   }
 
   #rino-5 {
@@ -118,6 +123,6 @@
    border-right: 33px solid transparent;
    position: relative;
    z-index: 10;
-   top: -263vh;
+   top: -244vh;
    left: -6.5vh;
  }
