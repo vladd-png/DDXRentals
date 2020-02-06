@@ -19,11 +19,12 @@ class App extends Component {
       hoods: {}
     }
   }
+
   componentDidMount() {
   fetch('http://localhost:3001/api/v1/areas')
     .then(response => response.json())
     .then(areaNamesData => {
-      this.setState({areaNames: {areaNamesData} })
+      this.setState({areaNames: areaNamesData })
       this.updateListings();
       this.updateAreaDetails(areaNamesData.areas)
     })
@@ -42,13 +43,34 @@ class App extends Component {
     Promise.all(selectedArea)
       .then(data => {
         data.forEach(area => {
-          // let id = area.id
-          // console.log(cityObj);
-          this.setState({ hoods: { ...this.state.hoods, [area.id]: area } })
+        this.setState({ hoods: { ...this.state.hoods, [area.id]: area } })
         })
-        this.setState({ areaDetails: data })
+        this.setState({ areaDetails: data }, () => this.addAreaNicknameToHoodz())
+
       })
   }
+
+  addAreaNicknameToHoodz() {
+    this.state.areaNames.areas.forEach(area => {
+      let id = area.details.split('/')
+       let areaObj = {
+         nickName: area.area,
+         id: id[4]
+      }
+      this.state.areaDetails.forEach(zone => {
+        if (parseInt(areaObj.id) === zone.id) {
+          // this.setState({ areaDetails: areaObj.nickName })
+          console.log(this.state.areaDetails);
+          // this.setState({ areaDetails: '' })
+          this.setState({ [zone.name]: {...zone, nickName: areaObj.nickName} })
+        }
+      })
+      // console.log(areaObj);
+      // this.setState({areaDetails: { ...this.state.areaDetails, areaObj}})
+    })
+  }
+
+
   updateNeighborhoodInfo = (zoneString) => {
     this.setState({ chosenHood: this.state.chosenHood[zoneString] })
 
@@ -59,7 +81,6 @@ class App extends Component {
         <Nav />
         <Map updateNeighborhoodInfo={this.updateNeighborhoodInfo}/>
         <Neighborhood areas={this.state.areaDetails}/>
-        <SmallListingCard />
       </div>
     );
   }
