@@ -4,6 +4,7 @@ import SmallListingCard from '../SmallListingCard/SmallListingCard.js';
 import Animation from '../Animation/Animation.js';
 import { fetchRentalAreaData } from '../../helpers.js';
 import './App.css';
+import Map from '../Map/Map.js';
 
 class App extends Component {
   constructor() {
@@ -37,6 +38,7 @@ class App extends Component {
     return (
       <div className="app">
       <SmallListingCard />
+        <Map />
       </div>
     );
   }
