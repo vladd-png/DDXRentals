@@ -4,8 +4,6 @@ import snowflake from '../../data/snowflake.png';
 import compassIcon from '../../data/compass_icon.png';
 import gondolaIcon from '../../data/gondola_icon.png';
 import priceIcon from '../../data/price_icon.png';
-import bedIcon from '../../data/bed_icon.png';
-import toiletIcon from '../../data/toilet_icon.png';
 import featuresIcon from '../../data/features_icon.png';
 
 const SmallListingCard = () => {
