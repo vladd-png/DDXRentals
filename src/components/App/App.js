@@ -15,7 +15,7 @@ class App extends Component {
       areaNames: {},
       areaDetails: {},
       listings: {},
-      chosenHood: '',
+      chosenHood: {},
       hoods: {}
     }
   }
@@ -46,35 +46,27 @@ class App extends Component {
         this.setState({ hoods: { ...this.state.hoods, [area.id]: area } })
         })
         this.setState({ areaDetails: data }, () => this.addAreaNicknameToHoodz())
-
       })
   }
 
   addAreaNicknameToHoodz() {
-    this.state.areaNames.areas.forEach(area => {
-      let id = area.details.split('/')
-       let areaObj = {
-         nickName: area.area,
-         id: id[4]
-      }
-      this.state.areaDetails.forEach(zone => {
-        if (parseInt(areaObj.id) === zone.id) {
-          // this.setState({ areaDetails: areaObj.nickName })
-          console.log(this.state.areaDetails);
-          // this.setState({ areaDetails: '' })
-          this.setState({ [zone.name]: {...zone, nickName: areaObj.nickName} })
+    let details = this.state.areaNames.areas.reduce((acc, area) => {
+      let id = area.details.split('/');
+      let areaObj = {nickName: area.area, id: id[4]};
+      this.state.areaDetails.forEach( zone => {
+      if (parseInt(areaObj.id) === zone.id) {
+          acc.push({...zone, nickName: areaObj.nickName});
         }
       })
-      // console.log(areaObj);
-      // this.setState({areaDetails: { ...this.state.areaDetails, areaObj}})
-    })
+      return acc;
+    }, []);
+    this.setState({ areaDetails: details });
   }
-
 
   updateNeighborhoodInfo = (zoneString) => {
-    this.setState({ chosenHood: this.state.chosenHood[zoneString] })
-
+    this.setState({ chosenHood: this.state.chosenHood[zoneString] });
   }
+
   render () {
     return (
       <div className="app">
