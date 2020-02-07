@@ -15,7 +15,13 @@ class App extends Component {
       areaNames: {},
       areaDetails: {},
       listings: {},
-      chosenHood: {},
+      chosenHood: {
+        id: 0,
+        name: 'Select An Area on the Left to View Full Details',
+        location: null,
+        about: '',
+        listings: []
+      },
       hoods: {}
     }
   }
@@ -43,11 +49,12 @@ class App extends Component {
     Promise.all(selectedArea)
       .then(data => {
         data.forEach(area => {
-        this.setState({ hoods: { ...this.state.hoods, [area.id]: area } })
+          this.setState({ hoods: { ...this.state.hoods, [area.name]: area } })
         })
         this.setState({ areaDetails: data }, () => this.addAreaNicknameToHoodz())
       })
   }
+
 
   addAreaNicknameToHoodz() {
     let details = this.state.areaNames.areas.reduce((acc, area) => {
@@ -71,8 +78,10 @@ class App extends Component {
     return (
       <div className="app">
         <Nav />
-        <Map updateNeighborhoodInfo={this.updateNeighborhoodInfo}/>
-        <Neighborhood areas={this.state.areaDetails}/>
+        <Map updateNeighborhoodInfo={this.updateNeighborhoodInfo} />
+        <Neighborhood areas={this.state.chosenHood} />
+        <SmallListingCard />
+
       </div>
     );
   }
