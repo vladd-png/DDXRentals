@@ -1,5 +1,6 @@
 import React from 'react';
 import './SmallListingCard.scss';
+// import imageData from '../../../public/images';
 import snowflake from '../../data/snowflake.png';
 import compassIcon from '../../data/compass_icon.png';
 import gondolaIcon from '../../data/gondola_icon.png';
