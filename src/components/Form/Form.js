@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import logo from '../../data/DDR-logo.png';
 import title from '../../data/DDR-title.png';
 import './Form.css';
+import { Link } from 'react-router-dom';
 
 class Form extends Component {
   constructor() {
@@ -21,6 +22,7 @@ class Form extends Component {
   }
   render() {
     return (
+      <main className='app-home'>
       <form id='user-login-form'>
         <img src={logo} alt='DDR Xtreme logo' id='logo-img'/>
         <img src={title} alt='DDR Xtreme title' id='title-img'/>
@@ -37,9 +39,10 @@ class Form extends Component {
           </select>
         </div>
         <div className='user-inputs'>
-          <button type='button' id='form-btn'>Send It</button>
+          <Link to={`/map`}><button type='button' id='form-btn'>Send It</button></Link>
         </div>
       </form>
+      </main>
     )
   }
 }
