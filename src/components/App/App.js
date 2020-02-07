@@ -48,11 +48,15 @@ class App extends Component {
     const selectedArea = fetchRentalAreaData(areaDetails)
     Promise.all(selectedArea)
       .then(data => {
-        data.forEach(area => {
-          this.setState({ hoods: { ...this.state.hoods, [area.name]: area } })
-        })
         this.setState({ areaDetails: data }, () => this.addAreaNicknameToHoodz())
+        this.addHoodData();
       })
+  }
+
+  addHoodData() {
+    this.state.areaDetails.forEach(area => {
+      this.setState({ hoods: { ...this.state.hoods, [area.name]: area } })
+    });
   }
 
 
@@ -71,7 +75,8 @@ class App extends Component {
   }
 
   updateNeighborhoodInfo = (zoneString) => {
-    this.setState({ chosenHood: this.state.chosenHood[zoneString] });
+    console.log(this.state.areaDetails);
+    this.setState({ chosenHood: this.state.hoods[zoneString] });
   }
 
   render () {
