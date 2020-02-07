@@ -1,18 +1,18 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import ListingContainer from './ListingContainer';
+import SmallListingCard from './SmallListingCard';
 import { shallow } from 'enzyme';
 
-describe('ListingContainer', () => {
+describe('SmallListingCard', () => {
 
   it('renders without crashing', () => {
     const div = document.createElement('div');
-    ReactDOM.render(<ListingContainer />, div);
+    ReactDOM.render(<SmallListingCard />, div);
     ReactDOM.unmountComponentAtNode(div);
   });
 
-  it('should be an instance of ListingContainer component', () => {
-    const wrapper = shallow(<ListingContainer
+  it('should be an instance of SmallListingCard component', () => {
+    const wrapper = shallow(<SmallListingCard
 
       />);
       expect(wrapper).toMatchSnapshot();

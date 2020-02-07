@@ -1,18 +1,18 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import ListingContainer from './ListingContainer';
+import Animation from './Animation';
 import { shallow } from 'enzyme';
 
-describe('ListingContainer', () => {
+describe('Animation', () => {
 
   it('renders without crashing', () => {
     const div = document.createElement('div');
-    ReactDOM.render(<ListingContainer />, div);
+    ReactDOM.render(<Animation />, div);
     ReactDOM.unmountComponentAtNode(div);
   });
 
-  it('should be an instance of ListingContainer component', () => {
-    const wrapper = shallow(<ListingContainer
+  it('should be an instance of Animation', () => {
+    const wrapper = shallow(<Animation
 
       />);
       expect(wrapper).toMatchSnapshot();

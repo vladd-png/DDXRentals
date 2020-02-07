@@ -1,5 +1,6 @@
 import React from 'react';
 import './SmallListingCard.scss';
+// import imageData from '../../../public/images';
 import snowflake from '../../data/snowflake.png';
 import compassIcon from '../../data/compass_icon.png';
 import gondolaIcon from '../../data/gondola_icon.png';
@@ -31,8 +32,8 @@ const SmallListingCard = (props) => {
           <div className='additional-images'>image</div>
         </div>
         <div className='additional-info'>
-          <h3>Beds: 2</h3>
-          <h3>Baths: 1.5</h3>
+          <h3>Beds: {props.beds}</h3>
+          <h3>Baths: {props.baths}</h3>
           <h3><img className='icon' src={featuresIcon} alt='location icon'/>features:</h3>
           <ul>
             {allFeatures}

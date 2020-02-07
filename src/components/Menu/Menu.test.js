@@ -1,18 +1,18 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import ListingContainer from './ListingContainer';
+import Menu from './Menu';
 import { shallow } from 'enzyme';
 
-describe('ListingContainer', () => {
+describe('Menu', () => {
 
   it('renders without crashing', () => {
     const div = document.createElement('div');
-    ReactDOM.render(<ListingContainer />, div);
+    ReactDOM.render(<Menu />, div);
     ReactDOM.unmountComponentAtNode(div);
   });
 
-  it('should be an instance of ListingContainer component', () => {
-    const wrapper = shallow(<ListingContainer
+  it('should be an instance of Menu component', () => {
+    const wrapper = shallow(<Menu
 
       />);
       expect(wrapper).toMatchSnapshot();

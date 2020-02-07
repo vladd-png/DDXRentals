@@ -61,7 +61,6 @@ class App extends Component {
     });
   }
 
-
   addAreaNicknameToHoodz() {
     let details = this.state.areaNames.areas.reduce((acc, area) => {
       let id = area.details.split('/');
@@ -77,7 +76,6 @@ class App extends Component {
   }
 
   updateNeighborhoodInfo = (zoneString) => {
-    console.log(this.state.areaDetails);
     this.setState({ chosenHood: this.state.hoods[zoneString] });
   }
 

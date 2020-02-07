@@ -11,6 +11,8 @@ const ListingContainer = (props) => {
       addressZip={place.address.zip}
       cost={place.details.cost_per_night}
       features={place.details.features}
+      beds={place.details.beds}
+      baths={place.details.baths}
     />
   })
   return (
