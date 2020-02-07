@@ -32,7 +32,7 @@
 
 #lohi-1 {
   border: 2px pink;
-  width: 15.5vh;
+  width: 13.5vh;
   height: 15vh;
   position: relative;
   z-index: 10;
@@ -41,17 +41,6 @@
   border-left: 100px solid transparent;
 }
 
-#lohi-2 {
-    width: 0;
-    height: 0;
-    border-bottom: 90px solid #202020;
-    border-left: 90px solid transparent;
-    position: relative;
-    z-index: 10;
-    top: -92.5vh;
-    left: -27.5vh;
-  }
-
   #park-hill-1 {
     background-color: #202020;
     // border-right: 100px solid transparent;
@@ -59,7 +48,7 @@
     height: 7vh;
     position: relative;
     z-index: 11;
-    top: -129vh;
+    top: -116vh;
     left: 34.5vh;
   }
 
@@ -69,7 +58,7 @@
     height: 46vh;
     position: relative;
     z-index: 10;
-    top: -135vh;
+    top: -122vh;
     left: 24.5vh;
   }
 
@@ -79,29 +68,18 @@
     height: 20vh;
     position: relative;
     z-index: 10;
-    top: -170vh;
+    top: -157vh;
     left: -5.5vh;
   }
 
-  #rino-2 {
-    width: 0;
-    height: 0;
-    border-bottom: 114px solid #202020;
-    border-left: 120px solid transparent;
-    position: relative;
-    z-index: 10;
-    top: -184vh;
-    left: 1.5vh;
-  }
-
   #rino-3 {
-    width: 11vh;
+    width: 9vh;
     height: 25vh;
     background-color: #202020;
     position: relative;
     z-index: 10;
-    top: -199vh;
-    left: 17.5vh;
+    top: -171vh;
+    left: 19.5vh;
   }
 
   #rino-4 {
@@ -111,7 +89,7 @@
     border-right: 75px solid transparent;
     position: relative;
     z-index: 10;
-    top: -218vh;
+    top: -190vh;
     left: -5.5vh;
   }
 
@@ -122,6 +100,6 @@
    border-right: 33px solid transparent;
    position: relative;
    z-index: 10;
-   top: -244vh;
+   top: -215vh;
    left: -6.5vh;
  }
