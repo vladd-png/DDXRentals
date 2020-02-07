@@ -6,17 +6,18 @@ import gondolaIcon from '../../data/gondola_icon.png';
 import priceIcon from '../../data/price_icon.png';
 import featuresIcon from '../../data/features_icon.png';
 
-const SmallListingCard = () => {
-
+const SmallListingCard = (props) => {
+  let allFeatures = props.features.map(feature => {
+    return <li>{feature}</li>
+  })
   return (
-    <div>
-
+    <div className='article-list'>
       <article className='short-card-container'>
         <div className='image-container'>image</div>
         <div className='small-card-details'>
-          <h3><img className='icon' src={gondolaIcon} alt='location icon'/>Hip RiNo Party Spot</h3>
-          <h3><img className='icon' src={compassIcon} alt='location icon'/>2250 Lawrence St.</h3>
-          <h3><img className='icon' src={priceIcon} alt='location icon'/>420.00 per night</h3>
+          <h3><img className='icon' src={gondolaIcon} alt='location icon'/>{props.name}</h3>
+          <h3><img className='icon' src={compassIcon} alt='location icon'/>{props.address} {props.addressZip}</h3>
+          <h3><img className='icon' src={priceIcon} alt='location icon'/>{props.cost} per night</h3>
         </div>
         <div className='card-buttons'>
           <img type='button' className='fav-icon' src={snowflake} alt='snowflake'/>
@@ -34,11 +35,7 @@ const SmallListingCard = () => {
           <h3>Baths: 1.5</h3>
           <h3><img className='icon' src={featuresIcon} alt='location icon'/>features:</h3>
           <ul>
-            <li>updated kitchen</li>
-            <li>rooftop</li>
-            <li>wetbar</li>
-            <li>backyard area</li>
-            <li>fireplace</li>
+            {allFeatures}
           </ul>
         </div>
         <button className='make-reservation-button'>make reservation</button>

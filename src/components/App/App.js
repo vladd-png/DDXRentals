@@ -5,8 +5,10 @@ import Animation from '../Animation/Animation.js';
 import Map from '../Map/Map.js';
 import Nav from '../Nav/Nav.js';
 import Neighborhood from '../Neighborhood/Neighborhood.js';
+import ListingContainer from '../ListingContainer/ListingContainer.js';
 import { fetchRentalAreaData } from '../../helpers.js';
 import './App.css';
+import { Route, NavLink } from 'react-router-dom';
 
 class App extends Component {
   constructor() {
@@ -40,7 +42,7 @@ class App extends Component {
   updateListings() {
     fetch('http://localhost:3001/api/v1/listings')
       .then(response => response.json())
-      .then(listingInfo => this.setState( {listings: {listingInfo}} ))
+      .then(listingInfo => this.setState( {listings: listingInfo} ))
       .catch(error => window.alert(`There was an error: ${error}`))
   }
 
@@ -81,13 +83,20 @@ class App extends Component {
 
   render () {
     return (
-      <div className="app">
-        <Nav />
-        <Map updateNeighborhoodInfo={this.updateNeighborhoodInfo} />
-        <Neighborhood areas={this.state.chosenHood} />
-        <SmallListingCard />
-
-      </div>
+      <main className='app-all'>
+        <div>
+          <Route exact path='/' component={Form} />
+          <Route exact path='/' component={Animation} />
+        </div>
+        <Route path='/' component={Nav} />
+        <div className='app-map'>
+          <Route exact path='/map' render={ () => <Map updateNeighborhoodInfo={this.updateNeighborhoodInfo} /> } />
+          <Route exact path='/map' render={ () => <Neighborhood areas={this.state.chosenHood} /> } />
+        </div>
+        <div className='app-listing'>
+          <Route exact path='/listings' render={ () => <ListingContainer listings={this.state.listings.listings} />} />
+        </div>
+      </main>
     );
   }
 }

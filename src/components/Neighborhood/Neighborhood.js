@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import './Neighborhood.scss';
+import { Link } from 'react-router-dom';
+
 
 const Neighborhood = props => {
   console.log(props);
@@ -18,8 +20,7 @@ const Neighborhood = props => {
       <ul id='area-listings'>
         {allListings}
       </ul>
-      <button type='button'>See All {props.areas.nickName} Listings</button>
-      <button type='button'>See All Listings</button>
+      <Link to={`/listings`}><button type='button'>See All Listings</button></Link>
     </aside>
   )
 }
