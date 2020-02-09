@@ -40,7 +40,7 @@ class Form extends Component {
           </select>
         </div>
         <div className='user-inputs'>
-          <Link to={`/map`}><button onClick={() => this.props.saveUserData(this.state)} type='button' id='form-btn'>Send It</button></Link>
+          <Link to={`/map`}><button onClick={() => this.props.saveUserData(this.state)} type='button' id='form-btn'>Send It!</button></Link>
         </div>
       </form>
       </main>
