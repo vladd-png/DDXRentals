@@ -18,13 +18,15 @@ class SmallListingCard extends Component {
     this.setState({cardExpand: !this.state.cardExpand})
   }
 
-  allFeatures = () => this.props.features.map(feature => {
-    return <li>{feature}</li>
-  })
+
 
   render() {
 
     let cardState = this.state.cardExpand ? '' : 'expand';
+
+    let allFeatures = this.props.features.map(feature => {
+      return <li>{feature}</li>
+    })
 
     return (
     <div className='article-list'>
@@ -51,7 +53,7 @@ class SmallListingCard extends Component {
           <h3>Baths: {this.props.baths}</h3>
           <h3><img className='icon' src={featuresIcon} alt='location icon'/>features:</h3>
           <ul>
-            {this.allFeatures}
+            {allFeatures}
           </ul>
         </div>
         <button className='make-reservation-button'>make reservation</button>
