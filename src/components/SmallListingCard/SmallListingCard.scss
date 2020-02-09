@@ -2,7 +2,7 @@
 .short-card-container,
 .full-card-container {
   align-items: center;
-  background-color: rgba(255, 255, 255, 0.8);
+  background-color: white;
   border-radius: 35px;
   display: flex;
   flex-direction: row;
@@ -17,6 +17,8 @@
 }
 
 .full-card-container {
+  margin-top: -35px;
+  height: 450px;
   border-top-right-radius: 0px;
   border-top-left-radius: 0px;
 }
@@ -34,12 +36,6 @@ h3 {
   width: 300px;
   margin: 20px;
   object-fit: cover;
-  // max-height: 150px;
-  // max-width: 300px;
-}
-
-.additional-images {
-  // margin: 16% 0% 16% 0%;
 }
 
 .icon {
@@ -56,6 +52,10 @@ h3 {
   width: 320px;
 }
 
+.additional-info {
+  margin-top: 40px;
+}
+
 ul {
   margin-left: 15%;
 }
@@ -68,7 +68,6 @@ li {
 
 .additional-info {
   align-self: flex-start;
-  // margin-top: -3%;
 }
 
 .fav-icon {
