@@ -101,7 +101,7 @@ class App extends Component {
           <Route exact path='/listings' render={ () => <ListingContainer listings={this.state.listings.listings} />} />
         </div>
         <div>
-          <Route exact path='/account' render={ () => <Account /> } />
+          <Route exact path='/account' render={ () => <Account userData={this.state.userData}/> } />
         </div>
       </main>
     );
