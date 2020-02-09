@@ -18,8 +18,6 @@ class SmallListingCard extends Component {
     this.setState({cardExpand: !this.state.cardExpand})
   }
 
-
-
   render() {
 
     let cardState = this.state.cardExpand ? '' : 'expand';
@@ -38,7 +36,7 @@ class SmallListingCard extends Component {
           <h3><img className='icon' src={priceIcon} alt='location icon'/>{this.props.cost} per night</h3>
         </div>
         <div className='card-buttons'>
-          <img type='button' className='fav-icon' src={snowflake} alt='snowflake'/>
+          <img type='button' className='fav-icon' onClick={() => this.props.addFavorite(this.props)} src={snowflake} alt='snowflake'/>
           <button className='view-listing-button' onClick={this.expandCard.bind(this)}>view details</button>
         </div>
       </article>
