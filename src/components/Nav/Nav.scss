@@ -1,5 +1,5 @@
 .avatar-img {
-  height: 70px;
+  height: 60px;
   width: auto;
 }
 
@@ -21,8 +21,8 @@
   height: 150px;
 }
 
-.snowflake {
-  height: 60px;
+.nav-btn {
+  height: 45px;
 }
 
 .user-info {
@@ -39,12 +39,25 @@
   height: 40px;
 }
 
+.email {
+  font-size: 0.8em;
+}
+
 .welcome-msg {
-  width: 40%;
+  width: 30%;
   text-align: center;
 }
 
 .user-display {
   display: flex;
   flex-direction: column;
+}
+
+.account-btn {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 0.6em;
+  color: #FFF;
 }
