@@ -47,7 +47,7 @@ class Account extends Component {
             <h1 id='account-name'>{this.state.account.name}</h1>
             <h3 id='account-email'>{this.state.account.email}</h3>
             <h3 id='account-value'>Your Custom {this.state.account.value} Ride Summary</h3>
-            <p>Welcome back to your Tubular Home Page. Here you can see all your Favorited Hip Hop Hot Spots. Funky Dope!</p>
+            <p id='account-p'>Welcome back to your Tubular Home Page. Here you can see all your Favorited Hip Hop Hot Spots by scrolling below. Funky Dope! Have fun shredder, and don't forget, Safety First!</p>
           </div>
         </div>
         <div id='account-listing'>
