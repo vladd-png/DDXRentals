@@ -19,12 +19,8 @@ class SmallListingCard extends Component {
   }
 
   render() {
-
     let cardState = this.state.cardExpand ? '' : 'expand';
-
-    let allFeatures = this.props.features.map(feature => {
-      return <li>{feature}</li>
-    })
+    let allFeatures = this.props.features.map(feature => <li>{feature}</li>)
 
     return (
     <div className='article-list'>
