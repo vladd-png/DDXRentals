@@ -1,10 +1,17 @@
 #account-page {
   background-color: #202020;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   height: 100vh;
+  padding-top: 100px;
+}
+
+#account-img {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
 }
 
 #account-avatar {
@@ -26,12 +33,17 @@
 #account-display {
   display: flex;
   flex-direction: column;
-  // justify-content: space-around;
   background-color: rgba(255, 255, 255, 0.8);
   border-radius: 0px 500px 500px 0px;
   padding: 15px;
-  width: 40%;
+  width: 50%;
   height: 300px;
-  margin-left: 50px;
+  margin-left: 20px;
   border: solid 10px #02A1FF;
+}
+
+#account-listing {
+  display: block;
+  overflow-y: scroll;
+  padding-bottom: 100px;
 }
