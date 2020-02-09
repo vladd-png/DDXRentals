@@ -5,6 +5,7 @@ import Animation from '../Animation/Animation.js';
 import Map from '../Map/Map.js';
 import Nav from '../Nav/Nav.js';
 import Neighborhood from '../Neighborhood/Neighborhood.js';
+import Account from '../Account/Account.js';
 import ListingContainer from '../ListingContainer/ListingContainer.js';
 import { fetchRentalAreaData } from '../../helpers.js';
 import './App.css';
@@ -98,6 +99,9 @@ class App extends Component {
         </div>
         <div className='app-listing'>
           <Route exact path='/listings' render={ () => <ListingContainer listings={this.state.listings.listings} />} />
+        </div>
+        <div>
+          <Route exact path='/account' render={ () => <Account /> } />
         </div>
       </main>
     );
