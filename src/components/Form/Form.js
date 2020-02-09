@@ -10,7 +10,7 @@ class Form extends Component {
     this.state = {
       name: '',
       email: '',
-      value: 'business',
+      value: 'Business',
       check: false
     }
   }

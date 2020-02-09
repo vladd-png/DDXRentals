@@ -15,6 +15,7 @@ const ListingContainer = (props) => {
       features={place.details.features}
       beds={place.details.beds}
       baths={place.details.baths}
+      addFavorite={props.addFavorite}
     />
   })
   return (

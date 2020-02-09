@@ -26,7 +26,8 @@ class App extends Component {
         about: '',
         listings: []
       },
-      hoods: {}
+      hoods: {},
+      favoritesId: []
     }
   }
 
@@ -85,6 +86,11 @@ class App extends Component {
     this.setState({ chosenHood: this.state.hoods[zoneString] });
   }
 
+  addFavorite = listing => {
+    console.log(listing);
+    this.setState({ favoritesId: [...this.state.favoritesId, listing] })
+  }
+
   render () {
     return (
       <main className='app-all'>
@@ -98,10 +104,10 @@ class App extends Component {
           <Route exact path='/map' render={ () => <Neighborhood areas={this.state.chosenHood} /> } />
         </div>
         <div className='app-listing'>
-          <Route exact path='/listings' render={ () => <ListingContainer listings={this.state.listings.listings} />} />
+          <Route exact path='/listings' render={ () => <ListingContainer addFavorite={this.addFavorite} listings={this.state.listings.listings} />} />
         </div>
         <div>
-          <Route exact path='/account' render={ () => <Account /> } />
+          <Route exact path='/account' render={ () => <Account userData={this.state.userData} favorites={this.state.favoritesId}/> } />
         </div>
       </main>
     );
