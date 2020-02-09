@@ -14,6 +14,7 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
+      userData: {},
       areaNames: {},
       areaDetails: {},
       listings: {},
@@ -61,6 +62,10 @@ class App extends Component {
     });
   }
 
+  saveUserData = userInfo => {
+    this.setState({userData: userInfo})
+  }
+
   addAreaNicknameToHoodz() {
     let details = this.state.areaNames.areas.reduce((acc, area) => {
       let id = area.details.split('/');
@@ -83,10 +88,10 @@ class App extends Component {
     return (
       <main className='app-all'>
         <div>
-          <Route exact path='/' component={Form} />
+          <Route exact path='/' render={ () => <Form saveUserData={this.saveUserData} /> } />
           <Route exact path='/' component={Animation} />
         </div>
-        <Route path='/' component={Nav} />
+          <Route path='/' render={ () => <Nav userData={this.state.userData} /> } />
         <div className='app-map'>
           <Route exact path='/map' render={ () => <Map updateNeighborhoodInfo={this.updateNeighborhoodInfo} /> } />
           <Route exact path='/map' render={ () => <Neighborhood areas={this.state.chosenHood} /> } />

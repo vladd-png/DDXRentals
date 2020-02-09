@@ -5,22 +5,21 @@ import logo from '../../data/DDR-logo.png'
 import './Nav.scss';
 import { Link } from 'react-router-dom';
 
-
 class Nav extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
-
     }
   }
+
   render() {
     return (
       <nav className='nav-bar'>
         <Link to={`/`}><img className='logo-img' src={ logo } alt='DDR logo' /></Link>
-        <h3 className='welcome-msg'>Welcome interpolate Name! Thanks for choose DDR for your Radical Adventure</h3>
+        <h3 className='welcome-msg'>{`Welcome ${this.props.userData.name}! Thanks for choose DDR for your ${this.props.userData.value} Adventure`}</h3>
         <div className='user-display'>
-          <h3 className='user-info'>Marcus Kleveland</h3>
-          <h3 className='user-info'>SwedeshSkiTeam@sendit.com</h3>
+          <h3 className='user-info'>{`${this.props.userData.name}`}</h3>
+          <h3 className='user-info'>{`${this.props.userData.email}`}</h3>
         </div>
         <img className='avatar-img user-info' src={ avatar } alt='winter avatar with beanie and goggles' />
         <button type='button' className='user-info' id='logout-btn'>Logout</button>

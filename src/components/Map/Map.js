@@ -7,7 +7,6 @@ const Map = (props) => {
   return (
     <div className='map' name='cap-hill'>
       <img id='map-image' src={ map } alt='neon map of denver with neighborhoods outlined'/>
-
       <div id='cap-hill' className='active-hood' onMouseEnter={() => props.updateNeighborhoodInfo('Capitol Hill')}></div>
       <div onMouseEnter={() => props.updateNeighborhoodInfo('Lower Highlands')}>
         <div className='active-hood' id='lohi-1' name='lohi'></div>

@@ -1,6 +1,5 @@
 import React from 'react';
 import './SmallListingCard.scss';
-// import imageData from '../../../public/images';
 import snowflake from '../../data/snowflake.png';
 import compassIcon from '../../data/compass_icon.png';
 import gondolaIcon from '../../data/gondola_icon.png';
@@ -8,15 +7,17 @@ import priceIcon from '../../data/price_icon.png';
 import featuresIcon from '../../data/features_icon.png';
 
 const SmallListingCard = (props) => {
+  console.log(props)
   let allFeatures = props.features.map(feature => {
     return <li>{feature}</li>
   })
   return (
+
     <div className='article-list'>
       <article className='short-card-container'>
-        <div className='image-container'>image</div>
+        <img src={process.env.PUBLIC_URL + `/images/${props.id}_a.jpg`} alt='Listing' className='image-container'/>
         <div className='small-card-details'>
-          <h3><img className='icon' src={gondolaIcon} alt='location icon'/>{props.name}</h3>
+          <h3 id='location-name'><img className='icon' src={gondolaIcon} alt='location icon'/>{props.name}</h3>
           <h3><img className='icon' src={compassIcon} alt='location icon'/>{props.address} {props.addressZip}</h3>
           <h3><img className='icon' src={priceIcon} alt='location icon'/>{props.cost} per night</h3>
         </div>
@@ -27,9 +28,9 @@ const SmallListingCard = (props) => {
       </article>
 
       <article className='full-card-container expand'>
-        <div>
-          <div className='additional-images'>image</div>
-          <div className='additional-images'>image</div>
+        <div className='additional-images-container'>
+          <img src={process.env.PUBLIC_URL + `/images/${props.id}_b.jpg`} alt='Listing' className='additional-images'/>
+          <img src={process.env.PUBLIC_URL + `/images/${props.id}_c.jpg`} alt='Listing' className='additional-images'/>
         </div>
         <div className='additional-info'>
           <h3>Beds: {props.beds}</h3>

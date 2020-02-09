@@ -5,8 +5,8 @@ import './Form.css';
 import { Link } from 'react-router-dom';
 
 class Form extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
       name: '',
       email: '',
@@ -14,6 +14,7 @@ class Form extends Component {
       check: false
     }
   }
+
   handleChange = event => {
     this.setState({ [event.target.name]: event.target.value })
   }
@@ -33,13 +34,13 @@ class Form extends Component {
         <div className='user-inputs dropdown'>
           <h2 className=''>Choose Your Adventure Type</h2>
           <select onChange={this.handleChoice} className='btn-label' value={this.state.value}>
-            <option value='business'>Business</option>
-            <option value='recreational'>Recreational</option>
-            <option value='extreme'>Xtreme</option>
+            <option value='Business'>Business</option>
+            <option value='Recreational'>Recreational</option>
+            <option value='EXTREME'>Xtreme</option>
           </select>
         </div>
         <div className='user-inputs'>
-          <Link to={`/map`}><button type='button' id='form-btn'>Send It</button></Link>
+          <Link to={`/map`}><button onClick={() => this.props.saveUserData(this.state)} type='button' id='form-btn'>Send It</button></Link>
         </div>
       </form>
       </main>

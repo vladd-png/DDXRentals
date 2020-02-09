@@ -5,6 +5,7 @@ import SmallListingCard from '../SmallListingCard/SmallListingCard.js';
 const ListingContainer = (props) => {
   const allListings = props.listings.map(place => {
     return <SmallListingCard
+      id={place.listing_id}
       area={place.area_id}
       name={place.name}
       address={place.address.street}

@@ -9,18 +9,18 @@ const Neighborhood = props => {
     let splitOut = listing.split('/');
     let coolWords = ['Radical', 'Gnarly', 'Tubular', 'Supreme', 'Off-The-Hook', 'Bees-Knees', 'Cats Pajamas', 'Outrageous', 'Awesome', 'Spectacular'];
     let chosenWord = coolWords[Math.floor(Math.random() * 10)];
-    return <li>{chosenWord} Listing {splitOut[4]}</li>
+    return <li className='feature-item' >{chosenWord} Listing {splitOut[4]}</li>
   });
   return (
     <aside className='sidebar-zone'>
-      <h1>{props.areas.nickName}</h1>
+      <h1 className='nickname-header'>{props.areas.nickName}</h1>
       <h2>{props.areas.name}</h2>
       <h3>{props.areas.location}</h3>
       <p>{props.areas.about}</p>
       <ul id='area-listings'>
         {allListings}
       </ul>
-      <Link to={`/listings`}><button type='button'>See All Listings</button></Link>
+      <Link to={`/listings`}><button type='button' className='listing-button'>See All Listings</button></Link>
     </aside>
   )
 }
