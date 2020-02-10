@@ -7,7 +7,15 @@ describe('Nav', () => {
 
   it('renders without crashing', () => {
     const div = document.createElement('div');
-    ReactDOM.render(<Nav />, div);
+    ReactDOM.render(<Nav
+      {{userData={
+        check: false,
+        email: '',
+        name: '',
+        validateRouterLink: '',
+        value: "business"
+      }}}
+      />, div);
     ReactDOM.unmountComponentAtNode(div);
   });
 
