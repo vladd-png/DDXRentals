@@ -1,0 +1,87 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Form should be an instance of Form component 1`] = `
+<main
+  className="app-home"
+>
+  <form
+    id="user-login-form"
+  >
+    <img
+      alt="DDR Xtreme logo"
+      id="logo-img"
+      src="DDR-logo.png"
+    />
+    <img
+      alt="DDR Xtreme title"
+      id="title-img"
+      src="DDR-title.png"
+    />
+    <div
+      className="user-inputs"
+    >
+      <input
+        autoComplete="off"
+        className="form-input"
+        name="name"
+        onChange={[Function]}
+        placeholder="Name"
+        value=""
+      />
+      <input
+        autoComplete="off"
+        className="form-input"
+        name="email"
+        onChange={[Function]}
+        placeholder="Email"
+        value=""
+      />
+    </div>
+    <div
+      className="user-inputs dropdown"
+    >
+      <h2
+        className=""
+      >
+        Choose Your Adventure Type
+      </h2>
+      <select
+        className="btn-label"
+        onChange={[Function]}
+        value="Business"
+      >
+        <option
+          value="Business"
+        >
+          Business
+        </option>
+        <option
+          value="Recreational"
+        >
+          Recreational
+        </option>
+        <option
+          value="EXTREME"
+        >
+          Xtreme
+        </option>
+      </select>
+    </div>
+    <div
+      className="user-inputs"
+    >
+      <Link
+        to="/map"
+      >
+        <button
+          id="form-btn"
+          onClick={[Function]}
+          type="button"
+        >
+          Send It
+        </button>
+      </Link>
+    </div>
+  </form>
+</main>
+`;

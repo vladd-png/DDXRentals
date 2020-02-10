@@ -1,0 +1,54 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`App should be an instance of App component 1`] = `
+<main
+  className="app-all"
+>
+  <div>
+    <Route
+      exact={true}
+      path="/"
+      render={[Function]}
+    />
+    <Route
+      component={[Function]}
+      exact={true}
+      path="/"
+    />
+  </div>
+  <Route
+    path="/"
+    render={[Function]}
+  />
+  <div
+    className="app-map"
+  >
+    <Route
+      exact={true}
+      path="/map"
+      render={[Function]}
+    />
+    <Route
+      exact={true}
+      path="/map"
+      render={[Function]}
+    />
+  </div>
+  <div
+    className="app-listing"
+  >
+    <Route
+      exact={true}
+      path="/listings"
+      render={[Function]}
+    />
+  </div>
+  <div>
+    <Route
+      exact={true}
+      path="/account"
+      render={[Function]}
+    />
+  </div>
+</main>
+`;

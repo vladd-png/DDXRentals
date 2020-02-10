@@ -1,0 +1,66 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Map should be an instance of Map component 1`] = `
+<div
+  className="map"
+  name="cap-hill"
+>
+  <img
+    alt="neon map of denver with neighborhoods outlined"
+    id="map-image"
+    src="neon-map.png"
+  />
+  <div
+    className="active-hood"
+    id="cap-hill"
+    onMouseEnter={[Function]}
+  />
+  <div
+    onMouseEnter={[Function]}
+  >
+    <div
+      className="active-hood"
+      id="lohi-1"
+      name="lohi"
+    />
+    <div
+      id="lohi-2"
+    />
+  </div>
+  <div
+    onMouseEnter={[Function]}
+  >
+    <div
+      className="active-hood"
+      id="park-hill-1"
+      name="park-hill"
+    />
+    <div
+      className="active-hood"
+      id="park-hill-2"
+      name="park-hill"
+    />
+  </div>
+  <div
+    onMouseEnter={[Function]}
+  >
+    <div
+      className="active-hood"
+      id="rino-1"
+      name="rino"
+    />
+    <div
+      id="rino-2"
+    />
+    <div
+      id="rino-3"
+    />
+    <div
+      id="rino-4"
+    />
+    <div
+      id="rino-5"
+    />
+  </div>
+</div>
+`;
