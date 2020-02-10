@@ -39,14 +39,14 @@ class App extends Component {
       this.updateListings();
       this.updateAreaDetails(areaNamesData.areas)
     })
-    .catch(error => window.alert(`There was an error: ${error}`))
+    .catch(error => window.alert(`There was an error here: ${error.message}`))
   }
 
   updateListings() {
     fetch('http://localhost:3001/api/v1/listings')
       .then(response => response.json())
       .then(listingInfo => this.setState( {listings: listingInfo} ))
-      .catch(error => window.alert(`There was an error: ${error}`))
+      .catch(error => window.alert(`There was an error: ${error.message}`))
   }
 
   updateAreaDetails(areaDetails) {
@@ -87,7 +87,6 @@ class App extends Component {
   }
 
   addFavorite = listing => {
-    console.log(listing);
     this.setState({ favoritesId: [...this.state.favoritesId, listing] })
   }
 
