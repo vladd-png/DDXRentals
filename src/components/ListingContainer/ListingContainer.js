@@ -20,7 +20,9 @@ const ListingContainer = (props) => {
   })
   return (
     <section className='listing-container'>
-      {allListings}
+      <div id='overflow'>
+        {allListings}
+      </div>
       <img id='tubes' src={ tubes } alt='tubular menu for scrolling' />
     </section>
   )
