@@ -8,7 +8,7 @@ export const fetchRentalAreaData = areaData => {
       .then(data => {
         return data
       })
-      .catch(error => window.alert(`There was an error: ${error}`))
+      .catch(error => error)
   })
   return result;
 }

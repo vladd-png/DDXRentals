@@ -70,6 +70,12 @@ describe('App', () => {
     wrapper.instance().addFavorite = jest.fn();
     wrapper.instance().addFavorite(mockArea);
     expect(wrapper.instance().addFavorite).toHaveBeenCalled();
-  })
+  });
+
+  it('should clear users favorited array when clearFavorites is invoked on logout', () => {
+    wrapper.instance().clearFavorites = jest.fn();
+    wrapper.instance().clearFavorites();
+    expect(wrapper.instance().clearFavorites).toHaveBeenCalled();
+  });
 
 });
