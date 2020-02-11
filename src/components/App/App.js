@@ -36,6 +36,7 @@ class App extends Component {
     getListings()
     .then(areaNamesData => {
       this.setState({areaNames: areaNamesData })
+      // this.pullAreaListings(areaNamesData.areas)
       this.updateAreaDetails(areaNamesData.areas)
       this.updateListings();
     })
@@ -48,6 +49,10 @@ class App extends Component {
       )})
     .catch(error => this.setState({ error: error.message }))
   }
+  // pullAreaListings(areaDetails) {
+  //   let selectedArea = fetchRentalAreaData(areaDetails)
+  //   this.updateAreaDetails(selectedArea)
+  // }
   updateAreaDetails(areaDetails) {
     const selectedArea = fetchRentalAreaData(areaDetails)
     Promise.all(selectedArea)
