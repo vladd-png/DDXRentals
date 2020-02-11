@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
-import avatar from '../../data/ski-avatar.png'
 import snowflake from '../../data/snowflake-white.png'
 import logo from '../../data/DDR-logo.png'
 import list from '../../data/list.png'
 import map from '../../data/map.png'
 import './Nav.scss';
 import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
 
 class Nav extends Component {
   constructor(props) {
@@ -39,6 +39,10 @@ class Nav extends Component {
       </nav>
     )
   }
+}
+
+Nav.propTypes = {
+  userData: PropTypes.object
 }
 
 export default Nav;
