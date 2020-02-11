@@ -4,16 +4,18 @@ exports[`App should be an instance of App component 1`] = `
 <main
   className="app-all"
 >
-  <div>
+  <div
+    id="app-landing"
+  >
     <Route
       exact={true}
       path="/"
       render={[Function]}
     />
     <Route
-      component={[Function]}
       exact={true}
       path="/"
+      render={[Function]}
     />
   </div>
   <Route
@@ -21,7 +23,7 @@ exports[`App should be an instance of App component 1`] = `
     render={[Function]}
   />
   <div
-    className="app-map"
+    id="app-map"
   >
     <Route
       exact={true}
@@ -35,7 +37,7 @@ exports[`App should be an instance of App component 1`] = `
     />
   </div>
   <div
-    className="app-listing"
+    id="app-listing"
   >
     <Route
       exact={true}
@@ -43,7 +45,14 @@ exports[`App should be an instance of App component 1`] = `
       render={[Function]}
     />
   </div>
-  <div>
+  <div
+    id="app-account"
+  >
+    <Route
+      exact={true}
+      path="/account"
+      render={[Function]}
+    />
     <Route
       exact={true}
       path="/account"
