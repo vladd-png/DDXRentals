@@ -102,7 +102,7 @@ class App extends Component {
       <main className='app-all'>
         <div>
           <Route exact path='/' render={ () => <Form saveUserData={this.saveUserData} /> } />
-          <Route exact path='/' render={ () => <Animation amount={this.state.userData}/>} />
+          <Route exact path='/' render={ () => <Animation amount={'Business'}/>} />
         </div>
           <Route path='/' render={ () => <Nav userData={this.state.userData} /> } />
         <div className='app-map'>
