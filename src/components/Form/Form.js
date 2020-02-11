@@ -2,8 +2,7 @@ import React, { Component } from 'react';
 import logo from '../../data/DDR-logo.png';
 import title from '../../data/DDR-title.png';
 import './Form.css';
-import { Link } from 'react-router-dom';
-import PropTypes from 'prop-types';
+import { Link, Redirect } from 'react-router-dom';
 
 class Form extends Component {
   constructor(props) {
@@ -11,26 +10,36 @@ class Form extends Component {
     this.state = {
       name: '',
       email: '',
-      value: 'Business',
-      check: false
+      value: 'business',
+      formCompleted: false,
     }
   }
 
   handleChange = event => {
     this.setState({ [event.target.name]: event.target.value })
   }
+
   handleChoice = event => {
     this.setState({ value: event.target.value });
   }
+
+  onSubmit = event => {
+    event.preventDefault();
+    this.props.saveUserData(this.state)
+    this.setState({ formCompleted: true })
+  }
+
   render() {
+
     return (
       <main className='app-home'>
-      <form id='user-login-form'>
+      {this.state.formCompleted && <Redirect to={{pathname: "/map"}}/>}
+      <form id='user-login-form' onSubmit={this.onSubmit}>
         <img src={logo} alt='DDR Xtreme logo' id='logo-img'/>
         <img src={title} alt='DDR Xtreme title' id='title-img'/>
         <div className='user-inputs'>
-          <input placeholder='Name' name='name' className='form-input' value={this.state.name} onChange={this.handleChange} autoComplete='off'/>
-          <input placeholder='Email' name='email' className='form-input' value={this.state.email} onChange={this.handleChange} autoComplete='off'/>
+          <input required placeholder='Name' name='name' className='form-input' value={this.state.name} onChange={this.handleChange} autoComplete='off'/>
+          <input required type='email' placeholder='Email' name='email' className='form-input' value={this.state.email} onChange={this.handleChange} autoComplete='off'/>
         </div>
         <div className='user-inputs dropdown'>
           <h2 className=''>Choose Your Adventure Type</h2>
@@ -41,16 +50,12 @@ class Form extends Component {
           </select>
         </div>
         <div className='user-inputs'>
-          <Link to={`/map`}><button onClick={() => this.props.saveUserData(this.state)} type='button' id='form-btn'>Send It!</button></Link>
+          <input type='submit' id='form-btn' value="Send it!" />
         </div>
       </form>
       </main>
     )
   }
-}
-
-Form.propTypes = {
-  favorites: PropTypes.array
 }
 
 export default Form;

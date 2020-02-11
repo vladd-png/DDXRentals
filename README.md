@@ -6,7 +6,9 @@ a React web app for organizing Airbnb data with a SSX Tricky theme!
 This was our second project (paired project) from Mod3 at Turing School of Software and Design. We were given six days to build a web app in React that organizes Airbnb listing data with a user-friendly UX/UI. The app uses the `fetch()` method to retrieve data from a live backend server which runs locally on the user's machine. A major learning goal for this project was to create a robust testing suite utilizing Jest and Enzyme to ensure all components function correctly.
 
 ### Screenshots
-![screenshot 1](https://user-images.githubusercontent.com/53405028/74109489-15dd3f00-4b41-11ea-9da8-007a78ca8d82.png)
+![screenshot 1](https://user-images.githubusercontent.com/53405028/74286261-a011d880-4ce4-11ea-986f-a2c4f9e6e0cd.png)
+![screenshot 2](https://user-images.githubusercontent.com/53405028/74286267-a607b980-4ce4-11ea-9844-f9042c292a52.png)
+![screenshot 3](https://user-images.githubusercontent.com/53405028/74286277-aa33d700-4ce4-11ea-8570-e43f5c0551b1.png)
 
 ### Directions for Use
 - On page load you will see a login screen requiring the user to input their name, email, and select their reason for using the app (i.e. 'Business', 'Recreational', or 'EXTREME')

@@ -18,7 +18,7 @@ const Animation = (props) => {
   }
   const flakes = snowflake.map(flake => <Snowflake locationX={flake - 50} locationY={Math.floor(Math.random() * 1500) - 100} key={Math.random()}/>);
   return (
-    <div>
+    <div className="snowflake-container">
       {flakes}
     </div>
   )
