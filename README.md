@@ -45,7 +45,7 @@ This was our second project (paired project) from Mod3 at Turing School of Softw
 7. clone down the image files from [this repo link](https://github.com/turingschool/VRAD-Assets "App Images") and extract the `image` folder and place it into the `public` folder within the app's directory.
 8. cd back to the main app's root directory and run `npm start`
 9. cd to the API Data root directory and run `npm start`
-10. you should now be able to use the DDR Extreme app within your browser at the url `http://localhost:3000` ✨SICK FUNKY DOPE MANEUVER!✨
+10. you should now be able to use the DDR Extreme app within your browser at the url `http://localhost:3000`<br>✨SICK FUNKY DOPE MANEUVER!✨
 
 ### This project was created by:
 Zachary Nemeroff https://github.com/ZaneMeroff<br>
