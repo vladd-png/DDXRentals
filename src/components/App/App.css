@@ -15,23 +15,7 @@
   width: 100%;
 }
 
-.app-all {
-  overflow: hidden;
-}
-
-#app-landing {
-  overflow: hidden;
-}
-
-#app-map {
+.app-map {
   background-color: #202020;
   background-size: cover;
-}
-
-#app-listing {
-  overflow-y: scroll;
-}
-
-#app-account {
-  overflow: hidden;
 }
