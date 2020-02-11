@@ -9,6 +9,8 @@ import ListingContainer from '../ListingContainer/ListingContainer.js';
 import { fetchRentalAreaData } from '../../helpers.js';
 import './App.css';
 import { Route } from 'react-router-dom';
+import { getListings, updateListingState } from '../../apiCalls.js';
+
 
 class App extends Component {
   constructor() {
@@ -26,28 +28,26 @@ class App extends Component {
         listings: []
       },
       hoods: {},
-      favoritesId: []
+      favoritesId: [],
+      error: ''
     }
   }
-
   componentDidMount() {
-  fetch('http://localhost:3001/api/v1/areas')
-    .then(response => response.json())
+    getListings()
     .then(areaNamesData => {
       this.setState({areaNames: areaNamesData })
-      this.updateListings();
       this.updateAreaDetails(areaNamesData.areas)
+      this.updateListings();
     })
-    .catch(error => window.alert(`There was an error here: ${error.message}`))
+    .catch(error => this.setState({ error: error.message }))
   }
-
   updateListings() {
-    fetch('http://localhost:3001/api/v1/listings')
-      .then(response => response.json())
-      .then(listingInfo => this.setState( {listings: listingInfo} ))
-      .catch(error => window.alert(`There was an error: ${error.message}`))
+    updateListingState()
+    .then(listingInfo => {
+      this.setState( {listings: listingInfo}
+      )})
+    .catch(error => this.setState({ error: error.message }))
   }
-
   updateAreaDetails(areaDetails) {
     const selectedArea = fetchRentalAreaData(areaDetails)
     Promise.all(selectedArea)
@@ -56,17 +56,14 @@ class App extends Component {
         this.addHoodData();
       })
   }
-
   addHoodData() {
     this.state.areaDetails.forEach(area => {
       this.setState({ hoods: { ...this.state.hoods, [area.name]: area } })
     });
   }
-
   saveUserData = userInfo => {
     this.setState({userData: userInfo})
   }
-
   addAreaNicknameToHoodz() {
     let details = this.state.areaNames.areas.reduce((acc, area) => {
       let id = area.details.split('/');
@@ -80,13 +77,10 @@ class App extends Component {
     }, []);
     this.setState({ areaDetails: details });
   }
-
   updateNeighborhoodInfo = (zoneString) => {
     this.setState({ chosenHood: this.state.hoods[zoneString] });
   }
-
   addFavorite = listing => {
-
     console.log('state.favoritesId: ', this.state.favoritesId);
     console.log('listing coming in: ', listing);
     if (!this.state.favoritesId.includes(listing)) {
@@ -95,41 +89,31 @@ class App extends Component {
       return
     }
   }
-
   removeFavorite = listing => {
-    this.setState({ favoritesId: () => this.updateFavorites(listing) });
-  }
-
-  updateFavorites = listing => {
-    return this.state.favoritesId.filter(place => place.id !== listing.id);
-
     let filteredListings = this.state.favoritesId.filter(place => place.id !== listing.id);
     this.setState({ favoritesId: filteredListings });
   }
-
   render () {
     return (
       <main className='app-all'>
-        <div>
+        <div id='app-landing'>
           <Route exact path='/' render={ () => <Form saveUserData={this.saveUserData} /> } />
-          <Route exact path='/' render={ () => <Animation amount={this.state.userData}/>} />
+          <Route exact path='/' render={ () => <Animation amount={this.state.userData}/> } />
         </div>
           <Route path='/' render={ () => <Nav favoritesId={this.state.favoritesId} userData={this.state.userData} /> } />
-        <div className='app-map'>
+        <div id='app-map'>
           <Route exact path='/map' render={ () => <Map updateNeighborhoodInfo={this.updateNeighborhoodInfo} /> } />
           <Route exact path='/map' render={ () => <Neighborhood areas={this.state.chosenHood} /> } />
         </div>
-        <div className='app-listing'>
+        <div id='app-listing'>
           <Route exact path='/listings' render={ () => <ListingContainer addFavorite={this.addFavorite} listings={this.state.listings.listings} />} />
         </div>
-        <div>
+        <div id='app-account'>
           <Route exact path='/account' render={ () => <Account userData={this.state.userData} favorites={this.state.favoritesId} removeFavorite={this.removeFavorite}/> } />
           <Route exact path='/account' render={ () => <Animation amount={this.state.userData}/>} />
-
         </div>
       </main>
     );
   }
 }
-
 export default App;
