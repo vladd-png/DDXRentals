@@ -1,7 +1,8 @@
 import React from 'react';
 import './ListingContainer.scss'
 import SmallListingCard from '../SmallListingCard/SmallListingCard.js';
-import tubes from '../../data/menu-tubes.png'
+import tubes from '../../data/menu-tubes.png';
+import PropTypes from 'prop-types';
 
 const ListingContainer = (props) => {
   const allListings = props.listings.map(place => {
@@ -24,6 +25,11 @@ const ListingContainer = (props) => {
       <img id='tubes' src={ tubes } alt='tubular menu for scrolling' />
     </section>
   )
+}
+
+ListingContainer.propTypes = {
+  addFavorite: PropTypes.func,
+  listings: PropTypes.array
 }
 
 export default ListingContainer;
