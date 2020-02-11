@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import Form from '../Form/Form.js';
-import SmallListingCard from '../SmallListingCard/SmallListingCard.js';
 import Animation from '../Animation/Animation.js';
 import Map from '../Map/Map.js';
 import Nav from '../Nav/Nav.js';
@@ -9,8 +8,7 @@ import Account from '../Account/Account.js';
 import ListingContainer from '../ListingContainer/ListingContainer.js';
 import { fetchRentalAreaData } from '../../helpers.js';
 import './App.css';
-import { Route, NavLink } from 'react-router-dom';
-let filteredListings;
+import { Route } from 'react-router-dom';
 
 class App extends Component {
   constructor() {
@@ -87,9 +85,8 @@ class App extends Component {
     this.setState({ chosenHood: this.state.hoods[zoneString] });
   }
 
-  // *****************************************************************
-  // *****************************************************************
   addFavorite = listing => {
+
     console.log('state.favoritesId: ', this.state.favoritesId);
     console.log('listing coming in: ', listing);
     if (!this.state.favoritesId.includes(listing)) {
@@ -100,6 +97,12 @@ class App extends Component {
   }
 
   removeFavorite = listing => {
+    this.setState({ favoritesId: () => this.updateFavorites(listing) });
+  }
+
+  updateFavorites = listing => {
+    return this.state.favoritesId.filter(place => place.id !== listing.id);
+
     let filteredListings = this.state.favoritesId.filter(place => place.id !== listing.id);
     this.setState({ favoritesId: filteredListings });
   }
@@ -109,7 +112,7 @@ class App extends Component {
       <main className='app-all'>
         <div>
           <Route exact path='/' render={ () => <Form saveUserData={this.saveUserData} /> } />
-          <Route exact path='/' component={Animation} />
+          <Route exact path='/' render={ () => <Animation amount={this.state.userData}/>} />
         </div>
           <Route path='/' render={ () => <Nav favoritesId={this.state.favoritesId} userData={this.state.userData} /> } />
         <div className='app-map'>
@@ -121,6 +124,8 @@ class App extends Component {
         </div>
         <div>
           <Route exact path='/account' render={ () => <Account userData={this.state.userData} favorites={this.state.favoritesId} removeFavorite={this.removeFavorite}/> } />
+          <Route exact path='/account' render={ () => <Animation amount={this.state.userData}/>} />
+
         </div>
       </main>
     );

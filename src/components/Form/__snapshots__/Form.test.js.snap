@@ -78,7 +78,7 @@ exports[`Form should be an instance of Form component 1`] = `
           onClick={[Function]}
           type="button"
         >
-          Send It
+          Send It!
         </button>
       </Link>
     </div>

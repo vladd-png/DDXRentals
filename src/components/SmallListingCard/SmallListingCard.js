@@ -5,6 +5,7 @@ import compassIcon from '../../data/compass_icon.png';
 import gondolaIcon from '../../data/gondola_icon.png';
 import priceIcon from '../../data/price_icon.png';
 import featuresIcon from '../../data/features_icon.png';
+import PropTypes from 'prop-types';
 
 class SmallListingCard extends Component {
   constructor(props) {
@@ -51,10 +52,13 @@ class SmallListingCard extends Component {
         <button className='make-reservation-button'>Book</button>
       </article>
     </div>
-  )
-
+    )
+  }
 }
 
+
+SmallListingCard.propTypes = {
+  features: PropTypes.array
 }
 
 export default SmallListingCard;

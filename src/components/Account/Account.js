@@ -8,6 +8,7 @@ import four from '../../data/four.png';
 import five from '../../data/fivr.png';
 import six from '../../data/six.png';
 import seven from '../../data/seven.png';
+import PropTypes from 'prop-types';
 let avatarImg;
 
 class Account extends Component {
@@ -46,7 +47,7 @@ class Account extends Component {
     return (
       <section id='account-page'>
         <div id='account-img'>
-          <img src={ avatarImg } id='account-avatar' alt='avatar image from the ssx tricky game' />
+          <img src={ avatarImg } id='account-avatar' alt='avatar from the ssx tricky game' />
           <div id='account-display'>
             <h1 id='account-name'>{this.state.account.name}</h1>
             <h3 id='account-email'>{this.state.account.email}</h3>
@@ -56,11 +57,19 @@ class Account extends Component {
         </div>
         {this.props.favorites.length === 0 ? <h3 id='no-favs-message'>Welcome rider! There are no favorites here.</h3> : ''}
         <div id='account-listing'>
-          <h4>{this.buildListingCards()}</h4>
+
+          <div>{this.buildListingCards()}</div>
+
         </div>
       </section>
     )
   }
 }
+
+
+Account.propTypes = {
+  favorites: PropTypes.array
+}
+
 
 export default Account;

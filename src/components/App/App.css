@@ -5,7 +5,6 @@
 }
 
 /* login page */
-
 .app-home {
   display: flex;
   background-image: url('../../data/DDR-Wallpaper.jpg');
@@ -21,8 +20,4 @@
   background-color: #202020;
   background-size: cover;
   overflow: hidden;
-}
-
-.app-all {
-  /* overflow-x: hidden; */
 }
