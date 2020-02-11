@@ -1,6 +1,7 @@
 import React from 'react';
 import './Animation.scss';
 import Snowflake from './Snowflake.js';
+import PropTypes from 'prop-types';
 
 const Animation = (props) => {
   let snowflakeAmt = 150;
@@ -22,5 +23,9 @@ const Animation = (props) => {
     </div>
   )
 }
+
+Animation.propTypes = {
+  amount: PropTypes.object
+};
 
 export default Animation;
