@@ -3,6 +3,7 @@ import logo from '../../data/DDR-logo.png';
 import title from '../../data/DDR-title.png';
 import './Form.css';
 import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
 
 class Form extends Component {
   constructor(props) {
@@ -47,4 +48,9 @@ class Form extends Component {
     )
   }
 }
+
+Form.propTypes = {
+  favorites: PropTypes.array
+}
+
 export default Form;
