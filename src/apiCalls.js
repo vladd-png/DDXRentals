@@ -17,3 +17,13 @@ export const updateListingState = () => {
       return response.json()
     })
 }
+
+export const fetchAreaListings = details => {
+  return fetch(`http://localhost:3001${details}`)
+   .then(response => {
+     if(!response.ok) {
+       throw Error('Error while fetching.')
+     }
+     return response.json()
+   })
+}

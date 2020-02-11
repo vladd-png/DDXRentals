@@ -1,4 +1,5 @@
-import { getListings, updateListingState } from './apiCalls.js';
+import { getListings, updateListingState, fetchAreaListings } from './apiCalls.js';
+// import { fetchRentalAreaData } from './helpers.js';
 
 describe('getListings', () => {
   let mockResponse = [{
@@ -32,7 +33,7 @@ describe('getListings', () => {
     expect(window.fetch).toHaveBeenCalledWith('http://localhost:3001/api/v1/areas');
   });
 
-  it('HAPPY: should return an array of ideas', () => {
+  it('HAPPY: should return an array of neighborhood data', () => {
     expect(getListings()).resolves.toEqual(mockResponse)
   });
 
@@ -96,7 +97,7 @@ describe('getListings', () => {
       expect(window.fetch).toHaveBeenCalledWith('http://localhost:3001/api/v1/listings');
     });
 
-    it('HAPPY: should return an array of ideas', () => {
+    it('HAPPY: should return an array of lisiting data', () => {
       expect(updateListingState()).resolves.toEqual(mockResponse)
     });
 
@@ -106,13 +107,71 @@ describe('getListings', () => {
           ok: false
         })
       })
-      expect(updateListingState()).rejects.toEqual(Error('Error while fetching.'))
+      expect(updateListingState()).rejects.toEqual(Error('Error while updating.'))
+    });
+
+    it('SAD: should return an error if Promise rejects', () => {
+      window.fetch = jest.fn().mockImplementation(() => {
+        return Promise.reject(Error('Error while updating.'))
+      })
+      expect(updateListingState()).rejects.toEqual(Error('Error while updating.'))
+    })
+});
+
+
+
+describe('fetchRentalAreaData', () => {
+  let mockResponse = [{
+      id: 751,
+      name: "Park Hill",
+      location: "East of Downtown Denver",
+      about: "Park Hill features one of the best views of the downtown area and surrounding mountains. With easy access to City Park and the major highways, Park Hill also includes many unique styles of homes.",
+      region_code: 6648386,
+      quick_search: "g1m0tsxzl0o0",
+      listings: [
+        '/api/v1/listings/3921',
+        '/api/v1/listings/56',
+        '/api/v1/listings/21',
+      ]
+    }]
+
+    let mockAreaData = {
+      area: "Park Hill",
+      details: '/api/v1/areas/751'
+    }
+
+    beforeEach(() => {
+      window.fetch = jest.fn().mockImplementation(() => {
+        return Promise.resolve({
+          ok: true,
+          json: () => Promise.resolve(mockResponse)
+        });
+      });
+    });
+
+    it('should call fetch with the correct url', () => {
+      fetchAreaListings(mockAreaData.details);
+      expect(window.fetch).toHaveBeenCalledWith('http://localhost:3001/api/v1/areas/751');
+    });
+
+    it('HAPPY: should return an array of all listings for that neighborhood', () => {
+      expect(fetchAreaListings(mockAreaData)).resolves.toEqual(mockResponse)
+    });
+
+    it('SAD: should return an error if ok is false', () => {
+      window.fetch = jest.fn().mockImplementation(() => {
+        return Promise.resolve({
+          ok: false
+        })
+      })
+      expect(fetchAreaListings()).rejects.toEqual(Error('Error while fetching.'))
     });
 
     it('SAD: should return an error if Promise rejects', () => {
       window.fetch = jest.fn().mockImplementation(() => {
         return Promise.reject(Error('Error while fetching.'))
       })
-      expect(updateListingState()).rejects.toEqual(Error('Error while fetching.'))
+      expect(fetchAreaListings()).rejects.toEqual(Error('Error while fetching.'))
     })
+
 })
