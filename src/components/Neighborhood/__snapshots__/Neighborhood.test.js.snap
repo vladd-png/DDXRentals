@@ -1,0 +1,37 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Neighborhood should be an instance of Neighborhood component 1`] = `
+<aside
+  className="sidebar-zone"
+>
+  <h1
+    className="nickname-header"
+  />
+  <h2>
+    Select An Area on the Left to View Full Details
+  </h2>
+  <h3 />
+  <p />
+  <ul
+    id="area-listings"
+  >
+    <li
+      className="feature-item"
+    >
+      Gnarly
+       Listing 
+      3921
+    </li>
+  </ul>
+  <Link
+    to="/listings"
+  >
+    <button
+      className="listing-button"
+      type="button"
+    >
+      See All Listings
+    </button>
+  </Link>
+</aside>
+`;
