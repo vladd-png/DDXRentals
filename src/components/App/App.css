@@ -15,9 +15,24 @@
   width: 100%;
 }
 
-/* map page */
-.app-map {
+.app-all {
+  overflow: hidden;
+}
+
+#app-landing {
+  overflow: hidden;
+}
+
+#app-map {
   background-color: #202020;
   background-size: cover;
+  overflow: hidden;
+}
+
+#app-listing {
+  overflow-y: scroll;
+}
+
+#app-account {
   overflow: hidden;
 }
