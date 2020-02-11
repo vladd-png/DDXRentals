@@ -71,7 +71,7 @@ class Account extends Component {
           </div>
         </div>
         <div id='account-listing'>
-          <h4>{favoritedListings}</h4>
+          <div>{favoritedListings}</div>
         </div>
       </section>
     )
