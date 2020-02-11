@@ -4,7 +4,7 @@
   z-index: 5;
   background-color: #202020;
   top: 80px;
-  left: 75%;
+  left: 70%;
   overflow: hidden;
   height: 100%;
   text-align: right;
@@ -14,12 +14,19 @@
 }
 
 .listing-button {
-  height: 30px;
-  width: 100px;
+  height: 40px;
+  width: 150px;
   background-color: #DB49CB;
   border: none;
-  border-radius: 10px;
+  border-radius: 20px;
   color: #FFF;
+  font-size: 1em;
+}
+
+.listing-button:hover {
+  cursor: pointer;
+  background-color: #02A1FF;
+  border: none;
 }
 
 .nickname-header {
@@ -30,4 +37,8 @@
 .feature-item {
   color: #02A1FF;
   list-style: none;
+}
+
+#area-listings {
+  margin: 6% 4% 6% 4%;
 }
