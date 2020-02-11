@@ -1,0 +1,91 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Nav should be an instance of Nav component 1`] = `
+<nav
+  className="nav-bar"
+>
+  <Link
+    to="/"
+  >
+    <img
+      alt="DDR logo"
+      className="logo-img"
+      src="DDR-logo.png"
+    />
+  </Link>
+  <h3
+    className="welcome-msg"
+  >
+    Welcome  to your business Adventure
+  </h3>
+  <div
+    className="user-display"
+  >
+    <h3
+      className="user-info"
+    />
+    <h3
+      className="user-info email"
+    />
+  </div>
+  <Link
+    to="/account"
+  >
+    <div
+      className="account-btn"
+    >
+      <img
+        alt="snowflake favorite icon"
+        className="nav-btn user-info"
+        src="snowflake.png"
+      />
+      <h3>
+        Favorites
+      </h3>
+    </div>
+  </Link>
+  <Link
+    to="/map"
+  >
+    <div
+      className="account-btn"
+    >
+      <img
+        alt="list icon"
+        className="nav-btn user-info"
+        src="map.png"
+      />
+      <h3>
+        Neighborhood
+      </h3>
+    </div>
+  </Link>
+  <Link
+    to="/listings"
+  >
+    <div
+      className="account-btn"
+    >
+      <img
+        alt="list icon"
+        className="nav-btn user-info"
+        src="list.png"
+      />
+      <h3>
+        All Listings
+      </h3>
+    </div>
+  </Link>
+  <Link
+    to="/"
+  >
+    <button
+      className="user-info"
+      id="logout-btn"
+      type="button"
+    >
+      Logout
+    </button>
+  </Link>
+</nav>
+`;
