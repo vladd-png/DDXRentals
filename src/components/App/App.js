@@ -10,6 +10,7 @@ import ListingContainer from '../ListingContainer/ListingContainer.js';
 import { fetchRentalAreaData } from '../../helpers.js';
 import './App.css';
 import { Route, NavLink } from 'react-router-dom';
+let filteredListings;
 
 class App extends Component {
   constructor() {
@@ -90,6 +91,15 @@ class App extends Component {
     this.setState({ favoritesId: [...this.state.favoritesId, listing] })
   }
 
+  removeFavorite = async listing => {
+    filteredListings = await this.state.favoritesId.filter(place => place.id !== listing.id);
+    this.updateListing(filteredListings);
+  }
+
+  updateListing = newLists => {
+    this.setState({ favoritesId: filteredListings });
+  }
+
   render () {
     return (
       <main className='app-all'>
@@ -106,7 +116,7 @@ class App extends Component {
           <Route exact path='/listings' render={ () => <ListingContainer addFavorite={this.addFavorite} listings={this.state.listings.listings} />} />
         </div>
         <div>
-          <Route exact path='/account' render={ () => <Account userData={this.state.userData} favorites={this.state.favoritesId}/> } />
+          <Route exact path='/account' render={ () => <Account userData={this.state.userData} favorites={this.state.favoritesId} removeFavorite={this.removeFavorite}/> } />
         </div>
       </main>
     );

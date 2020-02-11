@@ -21,7 +21,6 @@ class Account extends Component {
   componentDidMount = () => {
     this.setState({ account: this.props.userData })
     let random = Math.floor(Math.random() * 7);
-    console.log(random);
     let characters = [one, two, three, four, five, six, seven];
     avatarImg = characters[random];
     favoritedListings = this.props.favorites.map(place => {
@@ -35,6 +34,23 @@ class Account extends Component {
         features={place.features}
         beds={place.beds}
         baths={place.baths}
+        addFavorite={this.props.removeFavorite}
+        />
+    })
+  }
+  componentDidUpdate = () => {
+    favoritedListings = this.props.favorites.map(place => {
+      return <SmallListingCard
+        id={place.id}
+        area={place.area}
+        name={place.name}
+        address={place.address}
+        addressZip={place.addressZip}
+        cost={place.cost}
+        features={place.features}
+        beds={place.beds}
+        baths={place.baths}
+        addFavorite={this.props.removeFavorite}
         />
     })
   }
