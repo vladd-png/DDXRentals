@@ -1,5 +1,4 @@
 import { getListings, updateListingState, fetchAreaListings } from './apiCalls.js';
-// import { fetchRentalAreaData } from './helpers.js';
 
 describe('getListings', () => {
   let mockResponse = [{
