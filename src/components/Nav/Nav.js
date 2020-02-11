@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import avatar from '../../data/ski-avatar.png'
-import snowflake from '../../data/snowflake.png'
+import snowflake from '../../data/snowflake-white.png'
 import logo from '../../data/DDR-logo.png'
 import list from '../../data/list.png'
 import map from '../../data/map.png'
@@ -25,15 +25,15 @@ class Nav extends Component {
         </div>
         <Link to={'/account'}><div className='account-btn'>
           <img className='nav-btn user-info' src={ snowflake } alt='snowflake favorite icon' />
-          <h3>Favorites</h3>
+          <h4>{`${this.props.favoritesId.length}`}{this.props.favoritesId.length === 1 ? ` Favorite` : ` Favorites`}</h4>
         </div></Link>
         <Link to={'/map'}><div className='account-btn'>
           <img className='nav-btn user-info' src={ map } alt='list icon' />
-          <h3>Neighborhood</h3>
+          <h4>Areas</h4>
         </div></Link>
         <Link to={'/listings'}><div className='account-btn'>
           <img className='nav-btn user-info' src={ list } alt='list icon' />
-          <h3>All Listings</h3>
+          <h4>Listings</h4>
         </div></Link>
         <Link to={'/'}><button type='button' className='user-info' id='logout-btn'>Logout</button></Link>
       </nav>
