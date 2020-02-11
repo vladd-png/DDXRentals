@@ -10,7 +10,6 @@ import six from '../../data/six.png';
 import seven from '../../data/seven.png';
 import PropTypes from 'prop-types';
 let avatarImg;
-let favoritedListings;
 
 class Account extends Component {
   constructor(props) {
@@ -19,15 +18,16 @@ class Account extends Component {
       account: ''
     }
   }
- //  static defaultProps = {
- //   favorite: PropTypes.array
- // }
+
   componentDidMount = () => {
     this.setState({ account: this.props.userData })
     let random = Math.floor(Math.random() * 7);
     let characters = [one, two, three, four, five, six, seven];
     avatarImg = characters[random];
-    favoritedListings = this.props.favorites.map(place => {
+  }
+
+  buildListingCards = () => {
+    return this.props.favorites.map(place => {
       return <SmallListingCard
         id={place.id}
         area={place.area}
@@ -42,22 +42,7 @@ class Account extends Component {
         />
     })
   }
-  componentDidUpdate = () => {
-    favoritedListings = this.props.favorites.map(place => {
-      return <SmallListingCard
-        id={place.id}
-        area={place.area}
-        name={place.name}
-        address={place.address}
-        addressZip={place.addressZip}
-        cost={place.cost}
-        features={place.features}
-        beds={place.beds}
-        baths={place.baths}
-        addFavorite={this.props.removeFavorite}
-        />
-    })
-  }
+
   render() {
     return (
       <section id='account-page'>
@@ -71,7 +56,7 @@ class Account extends Component {
           </div>
         </div>
         <div id='account-listing'>
-          <div>{favoritedListings}</div>
+          <div>{this.buildListingCards()}</div>
         </div>
       </section>
     )

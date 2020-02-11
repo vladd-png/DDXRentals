@@ -95,6 +95,8 @@ class App extends Component {
 
   updateFavorites = listing => {
     return this.state.favoritesId.filter(place => place.id !== listing.id);
+    let filteredListings = this.state.favoritesId.filter(place => place.id !== listing.id);
+    this.setState({ favoritesId: filteredListings });
   }
 
   render () {
