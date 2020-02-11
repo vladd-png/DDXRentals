@@ -1,6 +1,7 @@
 import React from 'react';
 import './Neighborhood.scss';
 import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
 
 const Neighborhood = props => {
 
@@ -23,6 +24,10 @@ const Neighborhood = props => {
       <Link to={`/listings`}><button type='button' className='listing-button'>See All Listings</button></Link>
     </aside>
   )
+}
+
+Neighborhood.propTypes = {
+  area: PropTypes.object
 }
 
 export default Neighborhood;
