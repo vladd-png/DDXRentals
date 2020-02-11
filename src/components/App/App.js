@@ -87,16 +87,20 @@ class App extends Component {
     this.setState({ chosenHood: this.state.hoods[zoneString] });
   }
 
+  // *****************************************************************
+  // *****************************************************************
   addFavorite = listing => {
-    this.setState({ favoritesId: [...this.state.favoritesId, listing] })
+    console.log('state.favoritesId: ', this.state.favoritesId);
+    console.log('listing coming in: ', listing);
+    if (!this.state.favoritesId.includes(listing)) {
+      this.setState({ favoritesId: [...this.state.favoritesId, listing] })
+    } else {
+      return
+    }
   }
 
-  removeFavorite = async listing => {
-    filteredListings = await this.state.favoritesId.filter(place => place.id !== listing.id);
-    this.updateListing(filteredListings);
-  }
-
-  updateListing = newLists => {
+  removeFavorite = listing => {
+    let filteredListings = this.state.favoritesId.filter(place => place.id !== listing.id);
     this.setState({ favoritesId: filteredListings });
   }
 
@@ -107,7 +111,7 @@ class App extends Component {
           <Route exact path='/' render={ () => <Form saveUserData={this.saveUserData} /> } />
           <Route exact path='/' component={Animation} />
         </div>
-          <Route path='/' render={ () => <Nav userData={this.state.userData} /> } />
+          <Route path='/' render={ () => <Nav favoritesId={this.state.favoritesId} userData={this.state.userData} /> } />
         <div className='app-map'>
           <Route exact path='/map' render={ () => <Map updateNeighborhoodInfo={this.updateNeighborhoodInfo} /> } />
           <Route exact path='/map' render={ () => <Neighborhood areas={this.state.chosenHood} /> } />
