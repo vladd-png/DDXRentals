@@ -1,6 +1,7 @@
 import React from 'react';
 import map from '../../data/neon-map.png';
-import './Map.scss'
+import './Map.scss';
+import PropTypes from 'prop-types';
 
 const Map = (props) => {
   return (
@@ -24,6 +25,10 @@ const Map = (props) => {
       </div>
     </div>
   )
+}
+
+Map.propTypes = {
+  updateNeighborhoodInfo: PropTypes.func
 }
 
 export default Map;
