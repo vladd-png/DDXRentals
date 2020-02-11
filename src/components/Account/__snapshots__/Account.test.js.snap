@@ -1,0 +1,47 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Account should be an instance of Account component 1`] = `
+<section
+  id="account-page"
+>
+  <div
+    id="account-img"
+  >
+    <img
+      alt="avatar image from the ssx tricky game"
+      id="account-avatar"
+    />
+    <div
+      id="account-display"
+    >
+      <h1
+        id="account-name"
+      >
+        Mr. T
+      </h1>
+      <h3
+        id="account-email"
+      >
+        ipitythefool@aol.com
+      </h3>
+      <h3
+        id="account-value"
+      >
+        Your Custom 
+        Business
+         Ride Summary
+      </h3>
+      <p
+        id="account-p"
+      >
+        Welcome back to your Tubular Home Page. Here you can see all your Favorited Hip Hop Hot Spots by scrolling below. Funky Dope! Have fun shredder, and don't forget, Safety First!
+      </p>
+    </div>
+  </div>
+  <div
+    id="account-listing"
+  >
+    <h4 />
+  </div>
+</section>
+`;
