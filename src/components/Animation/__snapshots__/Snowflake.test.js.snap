@@ -1,0 +1,16 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Snowflake should be an instance of Snowflake 1`] = `
+<img
+  alt="snowflake animation"
+  className="fade-in"
+  src="snowflake.png"
+  style={
+    Object {
+      "left": NaN,
+      "position": "absolute",
+      "top": undefined,
+    }
+  }
+/>
+`;

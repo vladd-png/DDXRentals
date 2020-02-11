@@ -10,6 +10,7 @@ import ListingContainer from '../ListingContainer/ListingContainer.js';
 import { fetchRentalAreaData } from '../../helpers.js';
 import './App.css';
 import { Route, NavLink } from 'react-router-dom';
+let filteredListings;
 
 class App extends Component {
   constructor() {
@@ -39,14 +40,14 @@ class App extends Component {
       this.updateListings();
       this.updateAreaDetails(areaNamesData.areas)
     })
-    .catch(error => window.alert(`There was an error: ${error}`))
+    .catch(error => window.alert(`There was an error here: ${error.message}`))
   }
 
   updateListings() {
     fetch('http://localhost:3001/api/v1/listings')
       .then(response => response.json())
       .then(listingInfo => this.setState( {listings: listingInfo} ))
-      .catch(error => window.alert(`There was an error: ${error}`))
+      .catch(error => window.alert(`There was an error: ${error.message}`))
   }
 
   updateAreaDetails(areaDetails) {
@@ -87,8 +88,16 @@ class App extends Component {
   }
 
   addFavorite = listing => {
-    console.log(listing);
     this.setState({ favoritesId: [...this.state.favoritesId, listing] })
+  }
+
+  removeFavorite = async listing => {
+    filteredListings = await this.state.favoritesId.filter(place => place.id !== listing.id);
+    this.updateListing(filteredListings);
+  }
+
+  updateListing = newLists => {
+    this.setState({ favoritesId: filteredListings });
   }
 
   render () {
@@ -107,7 +116,7 @@ class App extends Component {
           <Route exact path='/listings' render={ () => <ListingContainer addFavorite={this.addFavorite} listings={this.state.listings.listings} />} />
         </div>
         <div>
-          <Route exact path='/account' render={ () => <Account userData={this.state.userData} favorites={this.state.favoritesId}/> } />
+          <Route exact path='/account' render={ () => <Account userData={this.state.userData} favorites={this.state.favoritesId} removeFavorite={this.removeFavorite}/> } />
         </div>
       </main>
     );

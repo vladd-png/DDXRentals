@@ -1,0 +1,30 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ListingContainer should be an instance of ListingContainer component 1`] = `
+<section
+  className="listing-container"
+>
+  <SmallListingCard
+    addFavorite={[MockFunction]}
+    address="2250 Lawrence St"
+    addressZip="80205"
+    area={590}
+    baths={2.5}
+    beds={3}
+    cost={420}
+    features={
+      Array [
+        "hot tub",
+        "espresso machine",
+      ]
+    }
+    id={3}
+    name="Hip RiNo Party Spot"
+  />
+  <img
+    alt="tubular menu for scrolling"
+    id="tubes"
+    src="menu-tubes.png"
+  />
+</section>
+`;
