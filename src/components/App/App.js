@@ -91,12 +91,8 @@ class App extends Component {
     this.setState({ favoritesId: [...this.state.favoritesId, listing] })
   }
 
-  removeFavorite = async listing => {
-    filteredListings = await this.state.favoritesId.filter(place => place.id !== listing.id);
-    this.updateListing(filteredListings);
-  }
-
-  updateListing = newLists => {
+  removeFavorite = listing => {
+    let filteredListings = this.state.favoritesId.filter(place => place.id !== listing.id);
     this.setState({ favoritesId: filteredListings });
   }
 
