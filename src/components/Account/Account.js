@@ -8,6 +8,7 @@ import four from '../../data/four.png';
 import five from '../../data/fivr.png';
 import six from '../../data/six.png';
 import seven from '../../data/seven.png';
+import PropTypes from 'prop-types';
 let avatarImg;
 let favoritedListings;
 
@@ -18,6 +19,9 @@ class Account extends Component {
       account: ''
     }
   }
+ //  static defaultProps = {
+ //   favorite: PropTypes.array
+ // }
   componentDidMount = () => {
     this.setState({ account: this.props.userData })
     let random = Math.floor(Math.random() * 7);
@@ -58,7 +62,7 @@ class Account extends Component {
     return (
       <section id='account-page'>
         <div id='account-img'>
-          <img src={ avatarImg } id='account-avatar' alt='avatar image from the ssx tricky game' />
+          <img src={ avatarImg } id='account-avatar' alt='avatar from the ssx tricky game' />
           <div id='account-display'>
             <h1 id='account-name'>{this.state.account.name}</h1>
             <h3 id='account-email'>{this.state.account.email}</h3>
@@ -72,6 +76,10 @@ class Account extends Component {
       </section>
     )
   }
- }
+}
+
+Account.propTypes = {
+  favorites: PropTypes.array
+}
 
 export default Account;
