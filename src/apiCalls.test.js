@@ -31,3 +31,8 @@ describe('getListings', () => {
     getListings();
     expect(window.fetch).toHaveBeenCalledWith('http://localhost:3001/api/v1/areas');
   });
+
+  it('HAPPY: should return an array of ideas', () => {
+    expect(getListings()).resolves.toEqual(mockResponse)
+  });
+
