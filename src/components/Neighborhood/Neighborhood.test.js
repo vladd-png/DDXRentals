@@ -2,29 +2,26 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import Neighborhood from './Neighborhood';
 import { shallow } from 'enzyme';
+import { mockRandom } from 'jest-mock-random';
 
 describe('Neighborhood', () => {
 
-  it('renders without crashing', () => {
-    const div = document.createElement('div');
-    const mockListing = {
+  let mockAreas;
 
-    }
-    ReactDOM.render(<Neighborhood
-      areas={{chosenHood:
-        {
-          id: 0,
-          name: 'Select An Area on the Left to View Full Details',
-          location: null,
-          about: '',
-          listings: ["/api/v1/listings/3921"]
-        }
-      }}/>, div);
-    ReactDOM.unmountComponentAtNode(div);
+  beforeEach(() => {
+    mockRandom([0.1]);
   });
 
   it('should be an instance of Neighborhood component', () => {
+    const mockAreas = {
+        id: 0,
+        name: 'Select An Area on the Left to View Full Details',
+        location: null,
+        about: '',
+        listings: ['/api/v1/listings/3921']
+      }
     const wrapper = shallow(<Neighborhood
+      areas={mockAreas}
       />);
       expect(wrapper).toMatchSnapshot();
   });
