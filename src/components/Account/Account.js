@@ -55,16 +55,21 @@ class Account extends Component {
             <p id='account-p'>Welcome back to your Tubular Home Page. Here you can see all your Favorited Hip Hop Hot Spots by scrolling below. Funky Dope! Have fun shredder, and don't forget, Safety First!</p>
           </div>
         </div>
+        {this.props.favorites.length === 0 ? <h3 id='no-favs-message'>Welcome rider! There are no favorites here.</h3> : ''}
         <div id='account-listing'>
+
           <div>{this.buildListingCards()}</div>
+
         </div>
       </section>
     )
   }
 }
 
+
 Account.propTypes = {
   favorites: PropTypes.array
 }
+
 
 export default Account;

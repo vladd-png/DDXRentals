@@ -86,7 +86,14 @@ class App extends Component {
   }
 
   addFavorite = listing => {
-    this.setState({ favoritesId: [...this.state.favoritesId, listing] })
+
+    console.log('state.favoritesId: ', this.state.favoritesId);
+    console.log('listing coming in: ', listing);
+    if (!this.state.favoritesId.includes(listing)) {
+      this.setState({ favoritesId: [...this.state.favoritesId, listing] })
+    } else {
+      return
+    }
   }
 
   removeFavorite = listing => {
@@ -95,6 +102,7 @@ class App extends Component {
 
   updateFavorites = listing => {
     return this.state.favoritesId.filter(place => place.id !== listing.id);
+
     let filteredListings = this.state.favoritesId.filter(place => place.id !== listing.id);
     this.setState({ favoritesId: filteredListings });
   }
@@ -106,7 +114,7 @@ class App extends Component {
           <Route exact path='/' render={ () => <Form saveUserData={this.saveUserData} /> } />
           <Route exact path='/' render={ () => <Animation amount={this.state.userData}/>} />
         </div>
-          <Route path='/' render={ () => <Nav userData={this.state.userData} /> } />
+          <Route path='/' render={ () => <Nav favoritesId={this.state.favoritesId} userData={this.state.userData} /> } />
         <div className='app-map'>
           <Route exact path='/map' render={ () => <Map updateNeighborhoodInfo={this.updateNeighborhoodInfo} /> } />
           <Route exact path='/map' render={ () => <Neighborhood areas={this.state.chosenHood} /> } />

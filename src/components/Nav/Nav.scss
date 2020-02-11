@@ -24,30 +24,40 @@
 }
 
 .nav-btn {
-  height: 45px;
+  height: 35px;
 }
 
 .user-info {
-  color: #fff;
   text-align: center;
+  font-size: 1em;
+  color: #FFBF03;
 }
 
 #logout-btn {
-  font-size: 1.2em;
+  font-size: .8em;
   color: #DB49CB;
   background-color: #fff;
-  width: 100px;
-  border-radius: 5px;
-  height: 40px;
+  width: 80px;
+  border-radius: 15px;
+  height: 30px;
+}
+
+#logout-btn:hover {
+  cursor: pointer;
+  background-color: #02A1FF;
+  border: none;
+  color: #FFF;
 }
 
 .email {
   font-size: 0.8em;
+  color: #FFF;
 }
 
 .welcome-msg {
   width: 30%;
   text-align: center;
+  font-size: 1em;
 }
 
 .user-display {
@@ -62,4 +72,8 @@
   align-items: center;
   font-size: 0.6em;
   color: #FFF;
+}
+
+.account-btn:hover {
+  color: #FFBF03;
 }
