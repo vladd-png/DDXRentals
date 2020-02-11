@@ -11,9 +11,9 @@ $randomNumber2: random(500);
 }
 
 #snowflake {
+	left: $randomNumber2 + px;
 	position: absolute;
 	top: $randomNumber2 + px;
-	left: $randomNumber2 + px;
 }
 
 @keyframes fade-in {
@@ -23,4 +23,13 @@ $randomNumber2: random(500);
   100% {
     opacity: 1;
   }
+}
+
+.snowflake-container {
+	height: 100vh;
+	overflow: hidden;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
 }

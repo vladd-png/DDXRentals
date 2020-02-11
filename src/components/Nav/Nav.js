@@ -25,24 +25,26 @@ class Nav extends Component {
         </div>
         <Link to={'/account'}><div className='account-btn'>
           <img className='nav-btn user-info' src={ snowflake } alt='snowflake favorite icon' />
-          <h4>{`${this.props.favoritesId.length}`}{this.props.favoritesId.length === 1 ? ` Favorite` : ` Favorites`}</h4>
+          <h3>{`${this.props.favoritesId.length}`}{this.props.favoritesId.length === 1 ? ` Favorite` : ` Favorites`}</h3 >
         </div></Link>
         <Link to={'/map'}><div className='account-btn'>
           <img className='nav-btn user-info' src={ map } alt='list icon' />
-          <h4>Areas</h4>
+          <h3>Areas</h3>
         </div></Link>
         <Link to={'/listings'}><div className='account-btn'>
           <img className='nav-btn user-info' src={ list } alt='list icon' />
-          <h4>Listings</h4>
+          <h3>Listings</h3>
         </div></Link>
-        <Link to={'/'}><button type='button' className='user-info' id='logout-btn'>Logout</button></Link>
+        <Link to={'/'}><button onClick={this.props.clearFavorites} type='button' className='user-info' id='logout-btn'>Logout</button></Link>
       </nav>
     )
   }
 }
 
 Nav.propTypes = {
-  userData: PropTypes.object
+  userData: PropTypes.object,
+  favoritesId: PropTypes.array,
+  clearFavorites: PropTypes.func
 }
 
 export default Nav;

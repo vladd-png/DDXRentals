@@ -57,19 +57,15 @@ class Account extends Component {
         </div>
         {this.props.favorites.length === 0 ? <h3 id='no-favs-message'>Welcome rider! There are no favorites here.</h3> : ''}
         <div id='account-listing'>
-
           <div>{this.buildListingCards()}</div>
-
         </div>
       </section>
     )
   }
 }
 
-
 Account.propTypes = {
   favorites: PropTypes.array
 }
-
 
 export default Account;

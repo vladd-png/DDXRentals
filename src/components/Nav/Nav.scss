@@ -4,19 +4,19 @@
 }
 
 .nav-bar {
-  height: 80px;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  background-color: #DB49CB;
-  position: fixed;
   align-items: center;
+  background-color: #DB49CB;
   color: black;
+  display: flex;
   font-size: 1.2em;
+  flex-direction: row;
+  height: 80px;
+  justify-content: space-between;
   padding-right: 15px;
+  position: fixed;
   width: 100%;
   z-index: 100;
-  
+
 }
 
 .logo-img {
@@ -28,36 +28,36 @@
 }
 
 .user-info {
-  text-align: center;
-  font-size: 1em;
   color: #FFBF03;
+  font-size: 1em;
+  text-align: center;
 }
 
 #logout-btn {
-  font-size: .8em;
-  color: #DB49CB;
   background-color: #fff;
-  width: 80px;
   border-radius: 15px;
+  color: #DB49CB;
+  font-size: .8em;
   height: 30px;
+  width: 80px;
 }
 
 #logout-btn:hover {
-  cursor: pointer;
   background-color: #02A1FF;
   border: none;
   color: #FFF;
+  cursor: pointer;
 }
 
 .email {
-  font-size: 0.8em;
   color: #FFF;
+  font-size: 0.8em;
 }
 
 .welcome-msg {
+  font-size: 1em;
   width: 30%;
   text-align: center;
-  font-size: 1em;
 }
 
 .user-display {
@@ -66,12 +66,12 @@
 }
 
 .account-btn {
+  align-items: center;
+  color: #FFF;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
   font-size: 0.6em;
-  color: #FFF;
+  justify-content: center;
 }
 
 .account-btn:hover {

@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Route } from 'react-router-dom';
 import Form from '../Form/Form.js';
 import Animation from '../Animation/Animation.js';
 import Map from '../Map/Map.js';
@@ -8,7 +9,6 @@ import Account from '../Account/Account.js';
 import ListingContainer from '../ListingContainer/ListingContainer.js';
 import { fetchRentalAreaData } from '../../helpers.js';
 import './App.css';
-import { Route } from 'react-router-dom';
 
 class App extends Component {
   constructor() {
@@ -86,7 +86,6 @@ class App extends Component {
   }
 
   addFavorite = listing => {
-
     console.log('state.favoritesId: ', this.state.favoritesId);
     console.log('listing coming in: ', listing);
     if (!this.state.favoritesId.includes(listing)) {
@@ -97,14 +96,12 @@ class App extends Component {
   }
 
   removeFavorite = listing => {
-    this.setState({ favoritesId: () => this.updateFavorites(listing) });
-  }
-
-  updateFavorites = listing => {
-    return this.state.favoritesId.filter(place => place.id !== listing.id);
-
     let filteredListings = this.state.favoritesId.filter(place => place.id !== listing.id);
     this.setState({ favoritesId: filteredListings });
+  }
+
+  clearFavorites = () =>{
+    this.setState({ favoritesId: [] });
   }
 
   render () {
@@ -114,7 +111,7 @@ class App extends Component {
           <Route exact path='/' render={ () => <Form saveUserData={this.saveUserData} /> } />
           <Route exact path='/' render={ () => <Animation amount={this.state.userData}/>} />
         </div>
-          <Route path='/' render={ () => <Nav favoritesId={this.state.favoritesId} userData={this.state.userData} /> } />
+          <Route path='/' render={ () => <Nav clearFavorites={this.clearFavorites} favoritesId={this.state.favoritesId} userData={this.state.userData} /> } />
         <div className='app-map'>
           <Route exact path='/map' render={ () => <Map updateNeighborhoodInfo={this.updateNeighborhoodInfo} /> } />
           <Route exact path='/map' render={ () => <Neighborhood areas={this.state.chosenHood} /> } />
@@ -125,10 +122,9 @@ class App extends Component {
         <div>
           <Route exact path='/account' render={ () => <Account userData={this.state.userData} favorites={this.state.favoritesId} removeFavorite={this.removeFavorite}/> } />
           <Route exact path='/account' render={ () => <Animation amount={this.state.userData}/>} />
-
         </div>
       </main>
-    );
+    )
   }
 }
 

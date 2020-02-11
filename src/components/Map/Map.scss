@@ -1,29 +1,29 @@
 #map-image {
   height: 100vh;
-  width: auto;
   margin-top: -3vh;
+  width: auto;
 }
 
 .map {
+  align-items: center;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
+  left: -30vh;
   overflow: hidden;
   position: relative;
-  left: -30vh;
   top: 50px;
 }
 
 #cap-hill {
   border: 2px pink solid;
   height: 19vh;
-  width: 13vh;
-  position: relative;
-  z-index: 10;
-  top: -33vh;
   left: 1vh;
   margin-right: 33vh;
+  position: relative;
+  top: -33vh;
+  width: 13vh;
+  z-index: 10;
 }
 
 .active-hood:hover {
@@ -32,76 +32,75 @@
 
 #lohi-1 {
   border: 2px pink;
-  width: 13.5vh;
-  height: 15vh;
-  position: relative;
-  z-index: 10;
-  top: -80.5vh;
-  left: -32vh;
   border-left: 100px solid transparent;
+  height: 15vh;
+  left: -32vh;
+  position: relative;
+  top: -80.5vh;
+  width: 13.5vh;
+  z-index: 10;
 }
 
   #park-hill-1 {
     background-color: #202020;
-    // border-right: 100px solid transparent;
-    width: 13.5vh;
     height: 7vh;
-    position: relative;
-    z-index: 11;
-    top: -116vh;
     left: 34.5vh;
+    position: relative;
+    top: -116vh;
+    width: 13.5vh;
+    z-index: 11;
   }
 
   #park-hill-2 {
     border: 2px pink;
-    width: 22.5vh;
     height: 46vh;
-    position: relative;
-    z-index: 10;
-    top: -122vh;
     left: 24.5vh;
+    position: relative;
+    top: -122vh;
+    width: 22.5vh;
+    z-index: 10;
   }
 
   #rino-1 {
     border: 2px pink;
-    width: 34.5vh;
     height: 20vh;
-    position: relative;
-    z-index: 10;
-    top: -157vh;
     left: -5.5vh;
+    position: relative;
+    top: -157vh;
+    width: 34.5vh;
+    z-index: 10;
   }
 
   #rino-3 {
-    width: 9vh;
-    height: 25vh;
     background-color: #202020;
-    position: relative;
-    z-index: 10;
-    top: -171vh;
+    height: 25vh;
     left: 19.5vh;
+    position: relative;
+    top: -171vh;
+    width: 9vh;
+    z-index: 10;
   }
 
   #rino-4 {
-    width: 0;
-    height: 0;
     border-bottom: 90px solid #202020;
     border-right: 75px solid transparent;
-    position: relative;
-    z-index: 10;
-    top: -190vh;
+    height: 0;
     left: -5.5vh;
+    position: relative;
+    top: -190vh;
+    width: 0;
+    z-index: 10;
   }
 
   #rino-5 {
-   width: 0;
-   height: 0;
-   border-top: 80px solid #202020;
    border-right: 33px solid transparent;
-   position: relative;
-   z-index: 10;
-   top: -215vh;
+   border-top: 80px solid #202020;
+   height: 0;
    left: -6.5vh;
+   position: relative;
+   top: -215vh;
+   width: 0;
+   z-index: 10;
  }
 
  .active-hood:hover {
