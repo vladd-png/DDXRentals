@@ -2,7 +2,6 @@
   height: 100vh;
   width: auto;
   margin-top: -3vh;
-
 }
 
 .map {
@@ -103,4 +102,8 @@
    z-index: 10;
    top: -215vh;
    left: -6.5vh;
+ }
+
+ .active-hood:hover {
+   cursor: pointer;
  }
