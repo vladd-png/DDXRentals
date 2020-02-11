@@ -36,3 +36,20 @@ describe('getListings', () => {
     expect(getListings()).resolves.toEqual(mockResponse)
   });
 
+  it('SAD: should return an error if ok is false', () => {
+    window.fetch = jest.fn().mockImplementation(() => {
+      return Promise.resolve({
+        ok: false
+      })
+    })
+    expect(getListings()).rejects.toEqual(Error('Error while fetching.'))
+  });
+
+  it('SAD: should return an error if Promise rejects', () => {
+    window.fetch = jest.fn().mockImplementation(() => {
+      return Promise.reject(Error('Error while fetching.'))
+    })
+    expect(getListings()).rejects.toEqual(Error('Error while fetching.'))
+  })
+
+});
