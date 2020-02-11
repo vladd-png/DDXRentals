@@ -29,4 +29,11 @@ describe('Form', () => {
     expect(wrapper.instance().handleChoice).toHaveBeenCalled();
   });
 
+  it('should verify user data', () => {
+    let mockEvent = { preventDefault: jest.fn() }
+    wrapper.instance().onSubmit = jest.fn();
+    wrapper.instance().onSubmit(mockEvent);
+    expect(wrapper.instance().onSubmit).toHaveBeenCalled();
+  })
+
 });
