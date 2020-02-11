@@ -26,3 +26,8 @@ describe('getListings', () => {
       });
     });
   });
+
+  it('should call fetch with the correct url', () => {
+    getListings();
+    expect(window.fetch).toHaveBeenCalledWith('http://localhost:3001/api/v1/areas');
+  });
