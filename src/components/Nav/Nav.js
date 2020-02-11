@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import avatar from '../../data/ski-avatar.png'
-import snowflake from '../../data/snowflake.png'
+import snowflake from '../../data/snowflake-white.png'
 import logo from '../../data/DDR-logo.png'
 import list from '../../data/list.png'
 import map from '../../data/map.png'
