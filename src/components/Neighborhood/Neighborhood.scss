@@ -1,32 +1,32 @@
 .sidebar-zone {
-  width: 350px;
-  position: absolute;
-  z-index: 5;
   background-color: #202020;
-  top: 80px;
+  color: #fff;
+  height: 100%;
   left: 70%;
   overflow: hidden;
-  height: 100%;
-  text-align: right;
   padding-right: 50px;
-  color: #fff;
   padding-top: 50px;
+  position: absolute;
+  text-align: right;
+  top: 80px;
+  width: 350px;
+  z-index: 5;
 }
 
 .listing-button {
-  height: 40px;
-  width: 150px;
   background-color: #DB49CB;
   border: none;
   border-radius: 20px;
   color: #FFF;
   font-size: 1em;
+  height: 40px;
+  width: 150px;
 }
 
 .listing-button:hover {
-  cursor: pointer;
   background-color: #02A1FF;
   border: none;
+  cursor: pointer;
 }
 
 .nickname-header {

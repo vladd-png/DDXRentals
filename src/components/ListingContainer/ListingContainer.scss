@@ -1,19 +1,18 @@
 .listing-container {
+  align-items: center;
   background-color: #202020;
   display: flex;
   flex-direction: column;
-  flex-wrap: wrap;
-  align-items: center;
-  margin-top: 80px;
+  padding-top: 80px;
 }
 
 #tubes {
-  position: fixed;
   height: 80%;
   left: 85%;
-  z-index: 10;
-  width: 150px;
   object-fit: cover;
+  position: fixed;
+  width: 150px;
+  z-index: 10;
 }
 
 #overflow {

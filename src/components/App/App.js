@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Route } from 'react-router-dom';
 import Form from '../Form/Form.js';
 import Animation from '../Animation/Animation.js';
 import Map from '../Map/Map.js';
@@ -10,7 +11,6 @@ import { fetchRentalAreaData } from '../../helpers.js';
 import './App.css';
 import { Route } from 'react-router-dom';
 import { getListings, updateListingState } from '../../apiCalls.js';
-
 
 class App extends Component {
   constructor() {
@@ -32,6 +32,7 @@ class App extends Component {
       error: ''
     }
   }
+  
   componentDidMount() {
     getListings()
     .then(areaNamesData => {
@@ -42,6 +43,7 @@ class App extends Component {
     })
     .catch(error => this.setState({ error: error.message }))
   }
+  
   updateListings() {
     updateListingState()
     .then(listingInfo => {
@@ -49,10 +51,12 @@ class App extends Component {
       )})
     .catch(error => this.setState({ error: error.message }))
   }
+  
   // pullAreaListings(areaDetails) {
   //   let selectedArea = fetchRentalAreaData(areaDetails)
   //   this.updateAreaDetails(selectedArea)
   // }
+  
   updateAreaDetails(areaDetails) {
     const selectedArea = fetchRentalAreaData(areaDetails)
     Promise.all(selectedArea)
@@ -61,14 +65,17 @@ class App extends Component {
         this.addHoodData();
       })
   }
+  
   addHoodData() {
     this.state.areaDetails.forEach(area => {
       this.setState({ hoods: { ...this.state.hoods, [area.name]: area } })
     });
   }
+  
   saveUserData = userInfo => {
     this.setState({userData: userInfo})
   }
+  
   addAreaNicknameToHoodz() {
     let details = this.state.areaNames.areas.reduce((acc, area) => {
       let id = area.details.split('/');
@@ -82,9 +89,11 @@ class App extends Component {
     }, []);
     this.setState({ areaDetails: details });
   }
+
   updateNeighborhoodInfo = (zoneString) => {
     this.setState({ chosenHood: this.state.hoods[zoneString] });
   }
+  
   addFavorite = listing => {
     console.log('state.favoritesId: ', this.state.favoritesId);
     console.log('listing coming in: ', listing);
@@ -94,31 +103,37 @@ class App extends Component {
       return
     }
   }
+  
   removeFavorite = listing => {
     let filteredListings = this.state.favoritesId.filter(place => place.id !== listing.id);
     this.setState({ favoritesId: filteredListings });
   }
+  
+  clearFavorites = () =>{
+    this.setState({ favoritesId: [] });
+  }
+
   render () {
     return (
-      <main className='app-all'>
-        <div id='app-landing'>
+      <main>
+        <div>
           <Route exact path='/' render={ () => <Form saveUserData={this.saveUserData} /> } />
           <Route exact path='/' render={ () => <Animation amount={this.state.userData}/> } />
         </div>
-          <Route path='/' render={ () => <Nav favoritesId={this.state.favoritesId} userData={this.state.userData} /> } />
-        <div id='app-map'>
+        <Route path='/' render={ () => <Nav clearFavorites={this.clearFavorites} favoritesId={this.state.favoritesId} userData={this.state.userData} /> } />
+        <div className='app-map'>
           <Route exact path='/map' render={ () => <Map updateNeighborhoodInfo={this.updateNeighborhoodInfo} /> } />
           <Route exact path='/map' render={ () => <Neighborhood areas={this.state.chosenHood} /> } />
         </div>
-        <div id='app-listing'>
+        <div>
           <Route exact path='/listings' render={ () => <ListingContainer addFavorite={this.addFavorite} listings={this.state.listings.listings} />} />
         </div>
-        <div id='app-account'>
+        <div>
           <Route exact path='/account' render={ () => <Account userData={this.state.userData} favorites={this.state.favoritesId} removeFavorite={this.removeFavorite}/> } />
           <Route exact path='/account' render={ () => <Animation amount={this.state.userData}/>} />
         </div>
       </main>
-    );
+    )
   }
 }
 export default App;
