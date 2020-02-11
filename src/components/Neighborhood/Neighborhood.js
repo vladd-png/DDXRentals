@@ -1,9 +1,9 @@
-import React, { Component } from 'react';
+import React from 'react';
 import './Neighborhood.scss';
 import { Link } from 'react-router-dom';
 
 const Neighborhood = props => {
-  
+
   const allListings = props.areas.listings.map(listing => {
     let splitOut = listing.split('/');
     let coolWords = ['Radical', 'Gnarly', 'Tubular', 'Supreme', 'Off-The-Hook', 'Bees-Knees', 'Cats Pajamas', 'Outrageous', 'Awesome', 'Spectacular'];
