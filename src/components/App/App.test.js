@@ -5,7 +5,7 @@ import App from './App';
 import { shallow, mount } from 'enzyme';
 
 describe('App', () => {
-  let wrapper, mockArea, mockNicknameDetails;
+  let wrapper, mockArea;
   let memoryRouter;
 
   beforeEach(() => {
@@ -29,14 +29,6 @@ describe('App', () => {
     },
     dev_id: 'u4gh2j', area: 'rino', db_connect: 834470
   }]
-  mockNicknameDetails = {
-    about: "RiNo is a burgeoning area with new bars, restaurants and event spaces popping up all the time. Explore this thriving area of Denver today!",
-    id: 590,
-    listings: ["/api/v1/listings/3", "/api/v1/listings/44", "/api…"],
-    location: "North of Downtown Denver",
-    name: "River North",
-    nickName: "RiNo",
-  }
 })
 
 

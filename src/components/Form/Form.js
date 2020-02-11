@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import logo from '../../data/DDR-logo.png';
 import title from '../../data/DDR-title.png';
 import './Form.css';
-import { Link, Redirect } from 'react-router-dom';
+import { Redirect } from 'react-router-dom';
 
 class Form extends Component {
   constructor(props) {

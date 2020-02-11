@@ -6,7 +6,6 @@ export const fetchRentalAreaData = areaData => {
     return fetch('http://localhost:3001' + area.details)
      .then(response => response.json())
       .then(data => {
-        console.log(data)
         return data
       })
       .catch(error => window.alert(`There was an error: ${error}`))

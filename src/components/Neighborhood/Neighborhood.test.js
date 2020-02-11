@@ -13,7 +13,7 @@ describe('Neighborhood', () => {
   });
 
   it('should be an instance of Neighborhood component', () => {
-    const mockAreas = {
+    mockAreas = {
         id: 0,
         name: 'Select An Area on the Left to View Full Details',
         location: null,
