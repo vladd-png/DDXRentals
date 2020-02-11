@@ -2,14 +2,15 @@ import React, { Component } from 'react';
 import './Neighborhood.scss';
 import { Link } from 'react-router-dom';
 
-
 const Neighborhood = props => {
+  
   const allListings = props.areas.listings.map(listing => {
     let splitOut = listing.split('/');
     let coolWords = ['Radical', 'Gnarly', 'Tubular', 'Supreme', 'Off-The-Hook', 'Bees-Knees', 'Cats Pajamas', 'Outrageous', 'Awesome', 'Spectacular'];
     let chosenWord = coolWords[Math.floor(Math.random() * 10)];
     return <li className='feature-item' >{chosenWord} Listing {splitOut[4]}</li>
   });
+
   return (
     <aside className='sidebar-zone'>
       <h1 className='nickname-header'>{props.areas.nickName}</h1>
