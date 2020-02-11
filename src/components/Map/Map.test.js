@@ -5,6 +5,8 @@ import { shallow } from 'enzyme';
 
 describe('Map', () => {
 
+  let mockUpdateNeighborhoodInfo;
+
   it('renders without crashing', () => {
     const div = document.createElement('div');
     ReactDOM.render(<Map />, div);
@@ -12,8 +14,9 @@ describe('Map', () => {
   });
 
   it('should be an instance of Map component', () => {
+    mockUpdateNeighborhoodInfo = jest.fn()
     const wrapper = shallow(<Map
-
+      updateNeighborhoodInfo={mockUpdateNeighborhoodInfo}
       />);
       expect(wrapper).toMatchSnapshot();
   });

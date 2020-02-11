@@ -1,0 +1,118 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SmallListingCard should be an instance of SmallListingCard component 1`] = `
+<div
+  className="article-list"
+>
+  <article
+    className="short-card-container"
+  >
+    <img
+      alt="Listing"
+      className="image-container"
+      src="/images/3_a.jpg"
+    />
+    <div
+      className="small-card-details"
+    >
+      <h3
+        id="location-name"
+      >
+        <img
+          alt="location icon"
+          className="icon"
+          src="gondola_icon.png"
+        />
+        Hip RiNo Party Spot
+      </h3>
+      <h3>
+        <img
+          alt="location icon"
+          className="icon"
+          src="compass_icon.png"
+        />
+        2250 Lawrence St
+         
+        80205
+      </h3>
+      <h3>
+        <img
+          alt="location icon"
+          className="icon"
+          src="price_icon.png"
+        />
+        420
+         per night
+      </h3>
+    </div>
+    <div
+      className="card-buttons"
+    >
+      <img
+        alt="snowflake"
+        className="fav-icon"
+        onClick={[Function]}
+        src="snowflake.png"
+        type="button"
+      />
+      <button
+        className="view-listing-button"
+        onClick={[Function]}
+      >
+        view details
+      </button>
+    </div>
+  </article>
+  <article
+    className="full-card-container expand"
+  >
+    <div
+      className="additional-images-container"
+    >
+      <img
+        alt="Listing"
+        className="additional-images"
+        src="/images/3_b.jpg"
+      />
+      <img
+        alt="Listing"
+        className="additional-images"
+        src="/images/3_c.jpg"
+      />
+    </div>
+    <div
+      className="additional-info"
+    >
+      <h3>
+        Beds: 
+        3
+      </h3>
+      <h3>
+        Baths: 
+        2.5
+      </h3>
+      <h3>
+        <img
+          alt="location icon"
+          className="icon"
+          src="features_icon.png"
+        />
+        features:
+      </h3>
+      <ul>
+        <li>
+          hot tub
+        </li>
+        <li>
+          espresso machine
+        </li>
+      </ul>
+    </div>
+    <button
+      className="make-reservation-button"
+    >
+      make reservation
+    </button>
+  </article>
+</div>
+`;

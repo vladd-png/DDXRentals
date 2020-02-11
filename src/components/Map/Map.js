@@ -2,7 +2,6 @@ import React from 'react';
 import map from '../../data/neon-map.png';
 import './Map.scss'
 
-
 const Map = (props) => {
   return (
     <div className='map' name='cap-hill'>
