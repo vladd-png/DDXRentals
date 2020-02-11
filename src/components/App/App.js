@@ -9,7 +9,6 @@ import Account from '../Account/Account.js';
 import ListingContainer from '../ListingContainer/ListingContainer.js';
 import { fetchRentalAreaData } from '../../helpers.js';
 import './App.css';
-import { Route } from 'react-router-dom';
 import { getListings, updateListingState } from '../../apiCalls.js';
 
 class App extends Component {
@@ -32,7 +31,7 @@ class App extends Component {
       error: ''
     }
   }
-  
+
   componentDidMount() {
     getListings()
     .then(areaNamesData => {
@@ -43,7 +42,7 @@ class App extends Component {
     })
     .catch(error => this.setState({ error: error.message }))
   }
-  
+
   updateListings() {
     updateListingState()
     .then(listingInfo => {
@@ -51,12 +50,12 @@ class App extends Component {
       )})
     .catch(error => this.setState({ error: error.message }))
   }
-  
+
   // pullAreaListings(areaDetails) {
   //   let selectedArea = fetchRentalAreaData(areaDetails)
   //   this.updateAreaDetails(selectedArea)
   // }
-  
+
   updateAreaDetails(areaDetails) {
     const selectedArea = fetchRentalAreaData(areaDetails)
     Promise.all(selectedArea)
@@ -65,17 +64,17 @@ class App extends Component {
         this.addHoodData();
       })
   }
-  
+
   addHoodData() {
     this.state.areaDetails.forEach(area => {
       this.setState({ hoods: { ...this.state.hoods, [area.name]: area } })
     });
   }
-  
+
   saveUserData = userInfo => {
     this.setState({userData: userInfo})
   }
-  
+
   addAreaNicknameToHoodz() {
     let details = this.state.areaNames.areas.reduce((acc, area) => {
       let id = area.details.split('/');
@@ -93,7 +92,7 @@ class App extends Component {
   updateNeighborhoodInfo = (zoneString) => {
     this.setState({ chosenHood: this.state.hoods[zoneString] });
   }
-  
+
   addFavorite = listing => {
     console.log('state.favoritesId: ', this.state.favoritesId);
     console.log('listing coming in: ', listing);
@@ -103,12 +102,12 @@ class App extends Component {
       return
     }
   }
-  
+
   removeFavorite = listing => {
     let filteredListings = this.state.favoritesId.filter(place => place.id !== listing.id);
     this.setState({ favoritesId: filteredListings });
   }
-  
+
   clearFavorites = () =>{
     this.setState({ favoritesId: [] });
   }

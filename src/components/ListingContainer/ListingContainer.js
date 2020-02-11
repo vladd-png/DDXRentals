@@ -17,6 +17,7 @@ const ListingContainer = (props) => {
       beds={place.details.beds}
       baths={place.details.baths}
       addFavorite={props.addFavorite}
+      key={Math.random()}
     />
   })
   return (

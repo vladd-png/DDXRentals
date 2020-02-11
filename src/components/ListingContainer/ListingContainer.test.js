@@ -2,11 +2,14 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import ListingContainer from './ListingContainer';
 import { shallow } from 'enzyme';
+import { mockRandom } from 'jest-mock-random';
+
 
 describe('ListingContainer', () => {
   let wrapper, mockAddFavorite, mockArea;
 
   beforeEach(() => {
+    mockRandom([0.1]);
     mockArea =  [{
       listing_id: 3, area_id: 590, name: 'Hip RiNo Party Spot',
       address: {

@@ -6,6 +6,7 @@ exports[`Form should be an instance of Form component 1`] = `
 >
   <form
     id="user-login-form"
+    onSubmit={[Function]}
   >
     <img
       alt="DDR Xtreme logo"
@@ -26,6 +27,7 @@ exports[`Form should be an instance of Form component 1`] = `
         name="name"
         onChange={[Function]}
         placeholder="Name"
+        required={true}
         value=""
       />
       <input
@@ -34,6 +36,8 @@ exports[`Form should be an instance of Form component 1`] = `
         name="email"
         onChange={[Function]}
         placeholder="Email"
+        required={true}
+        type="email"
         value=""
       />
     </div>
@@ -48,7 +52,7 @@ exports[`Form should be an instance of Form component 1`] = `
       <select
         className="btn-label"
         onChange={[Function]}
-        value="Business"
+        value="business"
       >
         <option
           value="Business"
@@ -70,17 +74,11 @@ exports[`Form should be an instance of Form component 1`] = `
     <div
       className="user-inputs"
     >
-      <Link
-        to="/map"
-      >
-        <button
-          id="form-btn"
-          onClick={[Function]}
-          type="button"
-        >
-          Send It!
-        </button>
-      </Link>
+      <input
+        id="form-btn"
+        type="submit"
+        value="Send it!"
+      />
     </div>
   </form>
 </main>

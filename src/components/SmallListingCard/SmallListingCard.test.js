@@ -3,7 +3,9 @@ import ReactDOM from 'react-dom';
 import SmallListingCard from './SmallListingCard';
 import { shallow } from 'enzyme';
 
+
 describe('SmallListingCard', () => {
+
 
   it('renders without crashing', () => {
     const div = document.createElement('div');
@@ -19,6 +21,7 @@ describe('SmallListingCard', () => {
       beds={3}
       baths={2.5}
       addFavorite={mockaddFavorite}
+      key={0.1}
     />, div);
     ReactDOM.unmountComponentAtNode(div);
   });

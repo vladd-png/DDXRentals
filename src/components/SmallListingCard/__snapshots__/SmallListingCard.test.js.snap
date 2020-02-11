@@ -25,7 +25,9 @@ exports[`SmallListingCard should be an instance of SmallListingCard component 1`
         />
         Hip RiNo Party Spot
       </h3>
-      <h3>
+      <h3
+        className="details"
+      >
         <img
           alt="location icon"
           className="icon"
@@ -35,7 +37,9 @@ exports[`SmallListingCard should be an instance of SmallListingCard component 1`
          
         80205
       </h3>
-      <h3>
+      <h3
+        className="details"
+      >
         <img
           alt="location icon"
           className="icon"
@@ -59,7 +63,7 @@ exports[`SmallListingCard should be an instance of SmallListingCard component 1`
         className="view-listing-button"
         onClick={[Function]}
       >
-        view details
+        Toggle View
       </button>
     </div>
   </article>
@@ -83,21 +87,27 @@ exports[`SmallListingCard should be an instance of SmallListingCard component 1`
     <div
       className="additional-info"
     >
-      <h3>
+      <h3
+        className="details"
+      >
         Beds: 
         3
       </h3>
-      <h3>
+      <h3
+        className="details"
+      >
         Baths: 
         2.5
       </h3>
-      <h3>
+      <h3
+        className="details"
+      >
         <img
           alt="location icon"
           className="icon"
           src="features_icon.png"
         />
-        features:
+        Features:
       </h3>
       <ul>
         <li>
@@ -111,7 +121,7 @@ exports[`SmallListingCard should be an instance of SmallListingCard component 1`
     <button
       className="make-reservation-button"
     >
-      make reservation
+      Book
     </button>
   </article>
 </div>

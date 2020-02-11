@@ -8,7 +8,7 @@ exports[`Account should be an instance of Account component 1`] = `
     id="account-img"
   >
     <img
-      alt="avatar image from the ssx tricky game"
+      alt="avatar from the ssx tricky game"
       id="account-avatar"
     />
     <div
@@ -41,7 +41,12 @@ exports[`Account should be an instance of Account component 1`] = `
   <div
     id="account-listing"
   >
-    <h4 />
+    <div>
+      <SmallListingCard
+        id={590}
+        name="River North"
+      />
+    </div>
   </div>
 </section>
 `;
