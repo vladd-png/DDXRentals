@@ -82,3 +82,37 @@ describe('getListings', () => {
         db_connect: 834470
       }]
 
+    beforeEach(() => {
+      window.fetch = jest.fn().mockImplementation(() => {
+        return Promise.resolve({
+          ok: true,
+          json: () => Promise.resolve(mockResponse)
+        });
+      });
+    });
+
+    it('should call fetch with the correct url', () => {
+      updateListingState();
+      expect(window.fetch).toHaveBeenCalledWith('http://localhost:3001/api/v1/listings');
+    });
+
+    it('HAPPY: should return an array of ideas', () => {
+      expect(updateListingState()).resolves.toEqual(mockResponse)
+    });
+
+    it('SAD: should return an error if ok is false', () => {
+      window.fetch = jest.fn().mockImplementation(() => {
+        return Promise.resolve({
+          ok: false
+        })
+      })
+      expect(updateListingState()).rejects.toEqual(Error('Error while fetching.'))
+    });
+
+    it('SAD: should return an error if Promise rejects', () => {
+      window.fetch = jest.fn().mockImplementation(() => {
+        return Promise.reject(Error('Error while fetching.'))
+      })
+      expect(updateListingState()).rejects.toEqual(Error('Error while fetching.'))
+    })
+})
