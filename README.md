@@ -8,7 +8,7 @@ This was our second project (paired project) from Mod3 at Turing School of Softw
 ### Screenshots
 ![screenshot 1](https://user-images.githubusercontent.com/53405028/74286261-a011d880-4ce4-11ea-986f-a2c4f9e6e0cd.png)
 ![screenshot 2](https://user-images.githubusercontent.com/53405028/74286267-a607b980-4ce4-11ea-9844-f9042c292a52.png)
-![screenshot 3](https://user-images.githubusercontent.com/53594458/76690318-7231f380-6604-11ea-86e7-acec7ae63283.png)
+![screenshot 3](https://user-images.githubusercontent.com/53405028/74286277-aa33d700-4ce4-11ea-8570-e43f5c0551b1.png)
 
 ### Directions for Use
 - On page load you will see a login screen requiring the user to input their name, email, and select their reason for using the app (i.e. 'Business', 'Recreational', or 'EXTREME')
